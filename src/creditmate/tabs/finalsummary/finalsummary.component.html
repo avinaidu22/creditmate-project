@@ -1,3 +1,87 @@
-<p>
-finalsummary works!
-</p>
+
+
+
+
+
+
+<html>
+ <head>
+  
+</head>
+<body onmousedown="disable();"  onload=" if(!document.getElementById('crEsraRollout').value) popupDisplay('No')">										
+			
+<form id="esratTemplateDetailsForm" name="esratTemplateDetailsForm" onsubmit="return true;" action="/CreditRethinkCREUAT/ESRAT/showESRATFinalSummary.action" method="post">
+
+<span class="errorMessageRed">
+		
+		
+	</span>
+	<span class="successMessage">
+		
+	</span>
+<table id="tbll" border="0" width="98%" align="center" cellspacing="1" cellpadding="1" class="bgTbRowWh">
+<!-- ESRA CR137_V4 changes by vsk -->
+<input type="hidden" name="esratFinalSummary.crEsraRollout" value="TRUE" id="crEsraRollout"/>
+
+
+
+<tr>
+			<td colspan="4" align="center" class="normal">
+			<table id="table2" width="98%" border="0">
+				<tr>
+					<td class="menublue">&rsaquo;<strong>&nbsp;Final Summary</strong></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	<tr>
+		<td colspan="4" align="center" class="bgTbRowWh">
+	
+		
+			
+				<div id="summaryCalSection">
+			<table cellspacing=1 width="98%" border=0>
+				<tr>
+					<td class="borderLight">
+						<table id=table2 cellSpacing=0 cellPadding=0 width="100%" border=0 >	
+								
+									<tr class=bgTbRowBl><td>&nbsp;</td></tr>
+									
+								<tr class=bgTbRowBl>
+									<td width="100%" align="left">
+										<table width="100%"  cellspacing="0" cellpadding="0" align="left">
+											<tr class=bgTbRowBl >
+												<td width="2%">&nbsp;</td>
+												<td width="17%"><strong>Final Category</strong></td>
+												<td width="31%">:&nbsp;&nbsp;&nbsp;<input type="text" name="esratFinalSummary.finalIndCategory" value="Near Compliant with SCB policies" readonly="readonly" id="esratTemplateDetailsForm_esratFinalSummary_finalIndCategory" class="field" style="width: 85%"/>
+</td>
+											<td width="2%">&nbsp;</td>
+												<td width="17%"><STRONG>Approval Level</STRONG></td>
+												<td width="28%">:&nbsp;&nbsp;&nbsp;<input type="text" name="esratFinalSummary.approvalLevel" value="Credit Officer, escalation to ESRM at Credit Officers' discretion" readonly="readonly" id="esratTemplateDetailsForm_esratFinalSummary_approvalLevel" class="field" style="width: 55%"/>
+</td>
+											
+											</tr>
+											<tr class=bgTbRowBl><td>&nbsp;</td></tr>
+										</table>
+									</td>
+								</tr>
+								
+								
+							
+						</table>
+					</td>
+				</tr>
+				
+			</table>
+			</div>
+			
+		</td>
+	</tr>
+</table>
+</form>
+
+
+
+
+</body>
+</html>

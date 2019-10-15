@@ -1,3 +1,69 @@
-<p>
-genpdf works!
-</p>
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+
+
+
+<html>
+<head>
+<link href="/CreditRethinkCREUAT/css/style.css" rel="stylesheet" type="text/css">
+<link href="/CreditRethinkCREUAT/css/aleph-css.css" rel="stylesheet" type="text/css">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+</head>
+ 
+<script type="text/javascript">	 
+	function submitForm(formId, actionValue, actionPerformed) { 		 
+		document.getElementById(formId).action = actionValue;  
+		document.getElementById(formId).submit();
+		return true;
+	}
+	
+	function disable() {
+		if (event.button == 2) {
+			alert("Sorry, Right click has been disabled for security reasons.");
+		}
+	}
+</script>
+	
+<body onmousedown="disable();">
+	
+			
+<form id="ssPrintForm" onsubmit="return true;" action="esratDownload.action" method="post">
+
+<input type="hidden" name="refreshPdfFlag" value="true" id="ssPrintForm_refreshPdfFlag"/>
+
+		<table align="center" cellSpacing="1" cellPadding="4" width="98%" border=0>
+			
+					
+			
+
+				   
+					
+					<TR class=bgTbRowBl>
+						<td align="center" width="50%"><strong>PDF for this ESRA needs to be generated.<BR>
+						Please click on the button to generate the PDF.</strong></td>
+						<td align="center" width="50%"><input type="submit" id="ssPrintForm_0" value="Generate PDF File" class="buttonText" onclick="submitForm('ssPrintForm', 'esratUpdatedPrintPreview.action', 'genPdf');"/>
+
+						</td>
+					</TR>
+								
+			
+			
+		
+		</table>
+
+		
+	
+</form>
+
+
+
+
+
+</body>
+</html>
