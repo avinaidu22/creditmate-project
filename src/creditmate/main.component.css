@@ -1,0 +1,1820 @@
+
+.fieldMediumAutoWidth{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:260px;
+}
+.errorMessage
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: RED
+}
+.errorMessage1
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: RED;
+	font-weight: bold;
+}
+.successMessage
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: green;
+	font-weight: bold;
+}
+.policyMessage
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: green;
+	
+}
+.gcap2Message
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+}
+.h1 
+{
+    display: list-item;                                                  
+    list-style-type: disc;       
+    list-style-position: inside; 
+}
+.blackMessage
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #474747;
+	text-decoration: none;
+}
+
+div.gridbox table.obj td span.space, div.gridbox table.obj td img.space{
+	width:18px;
+}
+
+div.gridbox{
+	overflow:hidden;
+}
+.lrborder {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-right-color: #0C83BD;
+	border-left-color: #0C83BD;
+}
+
+.tooltip {
+  font-family: Tahoma, Arial;
+  font-size: 11px;
+  position: absolute;
+  display:none;
+  padding:1px 2px 1px 2px;
+  border: 1px solid #2C8CBF;
+  background-color: #FFF;  
+  z-index: 100;  
+}
+
+.tooltipISDA {
+  font-family: Tahoma, Arial;
+  font-size: 11px;
+  position: absolute;
+  display:none;
+  padding:1px 2px 1px 2px;
+  border: 1px solid #e2e2e2;
+  background-color: #f0f0f0;  
+  z-index: 100;  
+} 
+
+.fieldForCG {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:160px;
+}
+ 
+.field {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:150px;
+}
+.fieldTenor {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:40px;
+}
+
+.fieldGreyed {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:150px;
+	background-color: #D8D8D8;
+}
+.fieldHide {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:150px;
+}
+.fieldarea {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:290px;
+}
+
+.fieldarea2 {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:730px;
+}
+
+
+.field1 {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:120px;
+}
+.fieldTenorDwn {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:70px;
+}
+.fieldBigger{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:550px;
+}
+
+
+.fieldbig{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:315px;
+}
+.fieldTextArea{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:530px;
+}
+.fieldTextAreaBig {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:530px;
+}
+.fieldTextAreaFull {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:100%;
+}
+.fieldActivitySearch{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:200px;
+}
+
+.fieldMedium{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:100px;
+}
+.fieldMediumBig{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:275px;
+}
+.fieldMediumBigForRDA{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:250px;
+	
+}
+.fieldMediumSmall{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:60px;
+}
+.fieldfree{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+}
+.bluenor {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #045E83;
+	text-decoration: none;
+}
+.bluenor:hover {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #045E83;
+	text-decoration: underline;
+}
+.copyright {
+	font-family: Tahoma, Arial;
+	font-size: 10px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+.copyright:hover {
+	font-family: Tahoma, Arial;
+	font-size: 10px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: underline;
+}
+.normal {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+.normal:hover {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+.menublue {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+.footernewmoie {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	background-color: #FFFF00;  
+	font-weight: bold;
+	color: #005077;
+	min-height: 100%;
+    width: 100%;
+	text-decoration: none;
+}
+.menublue:hover {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+.menuwhite {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.background {
+	background-attachment: fixed;
+	background-image: url(../../images/lo_water.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+ 
+.menublue2 {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #79B2D6;
+	text-decoration: none;
+}
+.menublue2:hover {
+   font-family: Tahoma, Arial;
+   font-size: 11px;
+   font-weight: bold;
+   color: #79B2D6;
+   text-decoration: underline;
+}
+.menubluebig {
+	font-family: Tahoma, Arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+.menubluebig:hover {
+	font-family: Tahoma, Arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+ 
+ .scroll
+{
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+
+div.workspacescroll
+{
+	width: 100%; 
+	height: 255px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+
+
+div.searchCustomerScroller { 
+	width: 100%; 
+	height: 300px;
+	margin: 0; 
+	padding: 0; 
+	border:  1px normal #474747;	
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+	scrollbar-3dlight-color:#f3f3f3;
+	scrollbar-arrow-color:#005077;
+	scrollbar-base-color:#ffffff;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#F4FAFD;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#005077;
+}
+div.searchImportProspectScroller { 
+	width: 100%; 
+	height: 70px;
+	margin: 0; 
+	padding: 0; 
+	border:  1px normal #474747;	
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: hidden;
+	scrollbar-3dlight-color:#f3f3f3;
+	scrollbar-arrow-color:#005077;
+	scrollbar-base-color:#ffffff;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#F4FAFD;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#005077;
+}
+
+.headergreen {
+	font-family: Tahoma, Arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #037E03;
+	text-decoration: none;
+}
+.darkred {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #990000;
+	text-decoration: none;
+}
+.darkwhite {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.darkred:hover {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #990000;
+	text-decoration: underline;
+}
+.buttonText{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #006DA8;
+}
+
+div.scroller { width: 100%; margin: 0; padding: 0; border: 0; overflow-y: auto; overflow-x: auto; overflow: auto; scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+div.welcomeScroller { 
+	width: 100%; 
+	height: 450px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: hidden;
+	scrollbar-3dlight-color:#f3f3f3;
+	scrollbar-arrow-color:#005077;
+	scrollbar-base-color:#ffffff;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#F4FAFD;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#005077;
+}
+
+div.homepageScroller { 
+	width: 200px; 
+	height: 90px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+	scrollbar-3dlight-color:#f3f3f3;
+	scrollbar-arrow-color:#005077;
+	scrollbar-base-color:#ffffff;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#F4FAFD;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#005077;
+}
+
+
+div.searchLibraryScroller { 
+	width: 100%; 
+	height: 280px;
+	margin: 0; 
+	padding: 0; 
+	border:  1px normal #474747;	
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+	scrollbar-3dlight-color:#f3f3f3;
+	scrollbar-arrow-color:#005077;
+	scrollbar-base-color:#ffffff;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#F4FAFD;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#005077;
+}
+
+.bgTbRowBl{
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+
+.bgTbRowGray{
+	background:#989898  !important;
+	border:1px solid #ccc !important;
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	
+}
+
+.bgTbRowWh{
+	background-image:url(../../images/tbl_bg_wht.gif);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+
+.bgTbRowWhNoStyle{
+	background-image:url(../../images/tbl_bg_wht.gif);
+	text-decoration: none;
+}
+
+.mandatory{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: RED;
+	text-decoration: none;
+}
+
+.mandatoryTxt{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: RED;
+	text-decoration: none;
+}
+
+.bgTbHeader{
+	background-image:url(../../images/TBHead.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+	
+}
+
+
+.borderLight{
+	background-image:url(../../images/Worspace_column-border.jpg);
+}
+
+.borderDark{
+	background-image:url(../../images/WorkspaceSearchBorder.jpg);
+}
+
+.bgTbMainHdr{
+	background-image:url(../../images/gradient_menu.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+.menuwhite_home {
+	font-family: "Franklin Gothic Medium"; 
+	font-size: 14px;
+	font-weight:bold;
+	color: #F8F8F8;
+	text-decoration:none;
+}
+
+.links{
+ text-decoration: none; 
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+   color: #FFFFFF;
+
+}
+.bgTbMainHdrGradient{
+	background-image:url(../../images/gradient_grid1_top.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+.bgTbMainHdrGradientLink{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+bgTbMainHdrGradientLink a:link{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+bgTbMainHdrGradientLink a:hover{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+.darkredtbRowBl {
+background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #990000;
+	text-decoration: none;
+}
+.iframeborder{
+border: solid #005077 1px;
+}
+.bgTbcolBbold{
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #474747;
+	text-decoration: none;
+}
+.TextRightAlign{
+	text-align:right;
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+}
+.NumberAlign{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	text-align:right;
+	width:100px;
+}
+
+.headerblue {
+	font-family: Tahoma, Arial;
+	font-size: 14px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+.TextRightAlignBold{
+	text-align:right;
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	font-weight: bold;
+}
+.TextBold{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:120px;
+	font-weight: bold;
+}
+.adminText{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	width:280px;
+	font-weight: bold;
+}
+
+.TextPrevRightAlign{
+	background-image:url(../../images/TBHead.jpg);
+	text-align:right;
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+}
+
+.TextPrevRightAlignBold{
+	background-image:url(../../images/TBHead.jpg);
+	text-align:right;
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	font-weight: bold;
+}
+
+div.scroll {	
+height: 200px;	
+overflow: auto;	
+border: 1px solid #B9DFFF;	
+background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+padding: 0px;
+}
+.scroll1 {
+font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+border: 1px solid #B9DFFF;	
+background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+padding: 0px;
+    scrollbar-3dlight-color:#f3f3f3;
+	scrollbar-arrow-color:#005077;
+	scrollbar-base-color:#ffffff;
+	scrollbar-darkshadow-color:#ffffff;
+	scrollbar-face-color:#F4FAFD;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#005077;
+}
+
+
+div.spreadDetail
+{
+	width: 100%; 
+	height: 200px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+
+
+
+ div.scroll_spread
+{
+ width: 100%;
+  margin: 1; 
+  padding: 0; 
+  border: 0; 
+  overflow-y: auto; 
+
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#005077;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+/*background-image: url(../../images/Worspace_column-border.jpg);*/
+/*border : 1px solid ;*/
+
+}
+ new screen 
+div.sifscroll
+{
+	width: 100%; 
+	height: 120px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+	
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+
+
+.calRed {
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	background-color:#FF0000;
+}
+
+.calGreen {
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	background-color:#00FF00;
+}
+
+.calYellow {
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	background-color:#FFFF00;
+}
+
+.CalBlue{
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	background-color:#00CCFF;
+	/*background-image:url(../../images/Worspace_column-border.jpg);*/
+}
+
+
+.CalGrey{
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	background-color:#999999;
+}
+
+.CalOrange{
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	background-color:#ffa500;
+}
+
+.field_justified {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;
+	
+}
+
+div.pefincomescroll
+{
+	width: 98%; 
+	height: 800px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+
+div.sif_scroll
+{
+	width: 100%; 
+	height: 270px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+	
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+
+div.PEFFeedscscroll
+{
+	width: 100%; 
+	height: 165px;
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	overflow: auto;
+	overflow-y: auto; 
+	overflow-x: auto;
+	
+scrollbar-3dlight-color:#f3f3f3;
+scrollbar-arrow-color:#005077;
+scrollbar-base-color:#ffffff;
+scrollbar-darkshadow-color:#ffffff;
+scrollbar-face-color:#F4FAFD;
+scrollbar-highlight-color:#ffffff;
+scrollbar-shadow-color:#005077;
+}
+.mandatoryField{
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: RED;
+	text-decoration: none;
+	border: 0px;
+	padding: 0px;
+}
+
+.hidBodyField{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	border: 0px;
+	padding: 0px;
+}
+
+.hidHeaderField{
+	background-image:url(../../images/Workspace_table_Bckgnd.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+	border: 0px;
+	padding: 0px;
+}
+
+.bgTbMainHdrBg{
+	background-image:url(../../images/gradient_menu_bg.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+.bgTbMainHdrSmall{
+	background-image:url(../../images/gradient_menu_sm.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+.bgTbMainHdrBgs{	
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+
+.fieldTextAreafree {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 1px solid #999999;	
+	width:200px;
+}
+.fieldTransparentText{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: #474747;
+	text-decoration: none;
+	border: 0px solid #999999;
+	width:150px;
+	background:transparent;
+} 
+
+.bgTbRowGr{
+
+background-color:#D7E4BC;
+
+font-family: Tahoma, Arial;
+
+font-size: 11px;
+
+font-weight: normal;
+
+color: #474747;
+
+text-decoration: none;
+
+}
+
+tr td a.leftmenuBold,
+tr td a:active.leftmenuBold,
+tr td a:visited.leftmenuBold,
+tr td a.leftmenu,
+tr td a:active.leftmenu,
+tr td a:visited.leftmenu {
+color:#666 !important;
+}
+
+
+/* Start: Added by Aleph: 2012-02-13 */
+
+input {
+	background:url('../../images/input-bg.png') repeat-x !important;
+	height:23px !important;
+	padding:4px 5px 0px 5px;
+}
+
+input[disabled] {
+	color:#ccc !important;
+}
+
+input[readonly] {
+	color:#ccc !important;
+}
+
+body {
+	color:#666 !important;
+	background:#f2f2f2 !important;
+	margin:0px;
+	padding:0px;
+}
+
+a, a:active, a:visited {
+color:#0088CC !important;
+}
+
+li a.leftmenuBold,
+li a:active.leftmenuBold,
+li a:visited.leftmenuBold,
+li a.leftmenu,
+li a:active.leftmenu,
+li a:visited.leftmenu {
+color:#666 !important;
+}
+
+table {
+	border-collapse:"collapse";
+	empty-cells:show;
+}
+
+li span.file, li span.folder {
+	background:transparent !important;
+	padding:0px 3px 0px 0px !important;
+	margin-top:-2px !important;
+}
+
+.borderDark {
+	background:transparent !important;
+	border:1px solid #ccc;
+}
+
+.bgTbRowBl {
+	background:#e2e2e2 !important;
+	border:1px solid #ccc !important;
+}
+
+.borderDark .bgTbRowBl{
+	border:0px none !important;
+}
+
+.borderLight {
+	background:transparent !important;
+	border:1px solid #ccc;
+}
+
+.bgTbRowWh {
+	background:transparent !important;
+}
+
+.menublue, .menublue:hover {
+	color:#333;
+	border:0px none !important;
+}
+
+.bgTbMainHdr {
+	background:url('../../images/widget_top_bg.png') repeat-x 0px bottom !important;
+	width:100%;
+	padding-left:10px;
+	padding-right:10px;
+	color:#333;
+}
+
+.bgTbMainHdrCM{
+	background-image:url(../../images/cmheader.jpg);
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+/*.menublue {
+	background:url('../../images/widget_top_bg.png') repeat-x 0px bottom !important;
+}*/
+
+.bgTbMainHdrGradient {
+	background:url('../../images/widget_top_bg_bigger.png') repeat-x 0px bottom !important;
+}
+
+.leftmenu, .leftmenuBold { 
+	color:#666 !important;
+	font-size:11px !important;
+}
+
+.treeview ul {
+	background:transparent !important;
+}
+
+input.buttonText {
+	background:url('../../images/widget_top_bg.png') repeat-x 0px -1px !important;
+	border:1px solid #ccc;
+	color:#666;
+	height:30px !important;
+	line-height:23px !important;
+	padding:0px !important;
+}
+
+.bgTbMainHdrGradient {
+	color:#666 !important;
+}
+
+.buttonText {
+	color:#666 !important;
+}
+
+table.borderLight {
+	border-collapse:'collapse';
+}
+
+table.borderLight td, th {
+	border:1px solid #f2f2f2;
+}
+
+tr.no-border td {
+	border:0px none !important;
+}
+
+td.normal input {
+	background:transparent !important;
+	height:15px !important;
+	width:15px;
+}
+
+.searchCustomerScroller {
+	background:transparent !important;
+}
+
+.errorMessage {
+	color:#cc3333 !important;
+}
+
+M.sun, B.sun {
+	background-color:#ccc !important;
+	color:#333;
+	font-weight:bold;
+}
+M.mon, B.mon {
+	background-color:#666 !important;
+	color:#fff !important;
+	font-weight:bold !important;
+	
+}
+
+C.DA, A.DA {
+	color:#666 !important;
+	text-decoration:underline !important;
+}
+
+.MO {
+	color:#666 !important;
+	text-decoration:underline !important;
+}
+
+
+A.Clear {
+	margin-top:35px !important;
+	display: block;
+	color:#666 !important;
+	text-decoration:underline !important;
+	
+}
+
+
+.aleph-warning{
+	color:#cc3333 !important;
+}
+
+
+
+.mandatory{
+	color:#cc3333 !important;
+	text-decoration: none;
+}
+
+.mandatoryTxt{
+	color:#cc3333 !important;
+	text-decoration: none;
+}
+
+
+table.borderLight .menublue td {
+	border:0px none !important;
+}
+
+td.buttoncss input {
+	background:transparent !important;
+	height:0px !important;
+	width:15px;
+}
+/* End: Added by Aleph: 2012-02-13 */
+div.mainContainerCM{
+ 	overflow:hidden;
+ 	margin:1px 1%; 
+ 	text-align:center; 
+ 	border:1px solid #157CB9; 
+ 	padding:2px; 
+ 	width:99%;
+ 	height:99%;
+}
+
+div.mainContainer{
+ 	overflow:hidden;
+ 	margin:1px 1%; 
+ 	text-align:center; 
+ 	border:1px solid #666666; 
+ 	padding:2px; 
+ 	width:99%;
+ 	height:99%;
+}
+
+.trigger_down {
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: #005077;
+	text-decoration: none;
+}
+ 
+.noteMessage
+{
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	color: RED
+}
+
+.fieldHidden
+{
+	visibility : hidden;
+}
+
+.colBorder
+{
+	border-left: 1px;
+	border-left-style: solid;
+	border-left-color: #f2f2f2; 	 
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+
+.colBorderNew
+{	
+	border-left-style: solid;
+	border-left-color: #f2f2f2; 	 
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	color: #474747;
+	text-decoration: none;
+}
+
+.textStyle
+{
+	border-collapse: collapse;
+	empty-cells: show;
+	color: #474747;
+	font-family: Tahoma, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.tooltipSubFclty {
+  font-family: Tahoma, Arial;
+  font-size: 11px;
+  position: absolute;
+  display:none;
+  padding:1px 2px 1px 2px;
+  border: 1px solid #2C8CBF;
+  background-color: #FFF;  
+  z-index: 100;  
+  width: 150px;
+  height:  30px;
+  text-align: left;
+}
+
+.redmenuBold {
+	color: #cc3333 !important;
+	font-size: 11px !important;
+	font-family: Tahoma, Arial !important;
+	font-weight: none !important;
+	text-decoration: none !important;
+	font-weight: bold !important;
+}
+.redmenu{
+	color: #cc3333 !important;
+	font-size: 11px !important;
+	font-family: Tahoma, Arial !important;
+	font-weight: none !important;
+	text-decoration: none !important;
+}
+
+tr td a.redmenuBold,tr td a:active.redmenuBold,tr td a:visited.redmenuBold,tr td a.redmenu,tr td a:active.redmenu,tr td a:visited.redmenu
+	{
+	color: #cc3333 !important;
+}
+
+li a.redmenuBold,li a:active.redmenuBold,li a:visited.redmenuBold,li a.redmenu,li a:active.redmenu,li a:visited.redmenu
+	{
+	color: #cc3333 !important;
+}
+
+.fieldRed {
+	font-family: Tahoma, Arial !important;
+	font-size: 11px !important;
+	color: #cc3333 !important;
+	text-decoration: none !important;
+	border: 2px solid #cc3333 !important;
+	width: 150px !important;
+}
+
+#ccyDiv {
+	width: 150px !important;
+}
+
+#clientDetailsBean\.clientsBaselSegmentCode {
+	width: 150px !important;
+}
+
+#groupSegmentDiv {
+	width: 150px !important;
+}
+
+#clientISICCodeDiv {
+	width: 150px !important;
+}
+
+#clientDetailsBean\.clientsBaselSegmentCodeDiv {
+	width: 150px !important;
+}
+
+#clientCountryOfIncorporationDiv {
+	width: 150px !important;
+}
+
+#clientDetailsForm_clientDetailsBean_clientsCountryOfDomicileDiv {
+	width: 150px !important;
+}
+
+#GroupGAMLocationDiv {
+	width: 150px !important;
+}
+
+#clientDetailsForm_clientDetailsBean_clientsSubSegmentDiv {
+	width: 150px !important;
+}
+
+#clientDetailsForm_clientDetailsBean_clientsCountryOfDomicileDiv {
+	width: 150px !important;
+}
+#outerLimitIdDiv{
+	width: 150px !important;
+}
+#saveButton{
+	width: 60px !important;
+}
+#coBorrowerAssetAsCollateralIdDiv{
+	width: 150px !important;
+}
+
+#groupSubSegmentDiv{
+	width: 150px !important;
+}
+#baselSegmentDiv{
+	width: 150px !important;
+}
+#iClientIncorporationCountryDiv{
+		width: 150px !important;
+}
+#compCreditYNDiv{
+	width: 150px !important;
+}
+#currencyIdDiv{
+			width: 150px !important;
+}
+#allExceptionCodeDiv{
+	width: 150px !important;
+	float: left !important;
+}
+#collateralForm_collateralBean_detailedCollateral_collateralLocationDiv{
+				width: 150px !important;
+}
+#allExceptionTextAreaDiv{
+		float: left !important;
+}
+#compCtryYNDiv{
+	width: 150px !important;
+}
+#astarCodesListDiv{
+	width: 150px !important;
+	float: left !important;
+}
+#allASTARTextAreaDiv{
+	float: left !important;
+}
+#progCodeListDiv{
+	width: 150px !important;
+	float: left !important;
+}
+#allProdTextAreaDiv{
+	float: left !important;
+}
+#allCountryDiv{
+	width: 150px !important;
+	float: left !important;
+}
+#allCountryTextAreaDiv{
+	float: left !important;
+}
+#clientKYCLevalDiv{
+	width: 150px !important;
+}
+#holdCoDiv{
+		width: 150px !important;
+}
+#ssFacilitiesDiv{
+	width: 150px !important;
+}
+#nonGAMDiv{
+	width: 150px !important;
+}
+#nonPrsncCntryDiv{
+	width: 150px !important;
+}
+#alleARCodesListDiv{
+	width: 150px !important;
+	float: left !important;
+}
+#allEarTextAreaDiv{
+	float: left !important;
+}
+#sEERiskDiv{
+	width: 150px !important;
+}
+#displaySubTypeDiv{
+	width: 150px !important;
+}
+#mlLendingUnitsDiv{
+	width: 150px !important;
+}
+#enableSIPLimitsSelDiv{
+	width: 150px !important;
+}
+#countryPrepareLoc2Div{
+	width: 150px !important;
+}
+#bcaTypeDiv{
+	width: 150px !important;
+}
+#bookingLocV3Div{
+	width: 150px !important;
+}
+#fundFundManagerSelDiv{
+	width: 150px !important;
+}
+#normalBulkFormatSelDiv{
+	width: 150px !important;
+}
+#fundMgrAsPrinAgentSelDiv{
+	width: 150px !important;
+}
+#thresholdCurrDiv{
+	width: 150px !important;
+}
+#thresholdAmtDiv{
+	width: 150px !important;
+}
+#minTransferAmtDiv{
+	width: 150px !important;
+}
+#gmraDiv{
+	width: 150px !important;
+}
+#csaDiv{
+	width: 150px !important;
+}
+#ctsRefNumIdDiv{
+	width: 70px !important;
+}
+#ctsIdDiv{
+	width: 150px !important;
+}
+#sovereignDiv{
+	width: 100px !important;
+}
+#stdNegativePledgeDiv{
+	width: 100px !important;
+}
+#select_collateral_typeDiv{
+					width: 150px !important;
+}
+#collateralBean\.detailedCollateral\.incomeComputationTypeDiv{
+	width: 150px !important;
+}
+#select_collateral_sub_typeDiv{
+	width: 150px !important;
+}
+#clientDetailsBean\.obligorAssetsAsCollaterals{
+		width: 150px !important;
+}
+#guarantorAssetAsCollateralIdDiv{
+	width: 150px !important;
+}
+#guarantorAssetJustificationIdDiv{
+	width: 150px !important;
+}
+#collateralsCodesListDiv{
+	width: 150px !important;
+}
+#baselSegmentDiv{
+	width: 150px !important;
+}
+#legalConstitutionTypeDiv{
+width: 150px !important;	
+}
+#pledgorProfileBean\.detailedProfile\.clientRelationshipDiv{
+width: 150px !important;	
+}
+#baselSegmentDiv{
+width: 150px !important;	
+}
+#disabledCountryInCorpDiv{
+width: 150px !important;	
+}
+#currencyDiv{
+width: 150px !important;	
+}
+#pledgorProfileBean\.detailedProfile\.consGrpTurnoverDiv{
+width: 150px !important;	
+}
+#pledgorProfileBean\.detailedProfile\.scorecardTypeDiv{
+width: 150px !important;	
+}
+#clientCountryOfIncorporationDiv{
+width: 150px !important;	
+}
+#clientISICCodeDiv{
+width: 150px !important;	
+}
+#clientCountryWithCreditRiskResponsibilityDiv{
+width: 150px !important;	
+}
+#clientDetailsBean\.obligorAssetsAsCollateralsDiv{
+width: 150px !important;	
+}
+#downSunFund{
+width: 90px !important;
+}
+#slUpload{
+width: 50px !important;
+}
+#requiresApprovalDiv{
+	width: 150px !important;
+	
+}
+#lePolicyIndicatorDiv{
+	width: 110px !important;	
+}
+#MPADetailDivSection{
+	width: 150px !important;
+}
+#groupSegmentClntDiv{
+	width: 150px !important;
+}
+#limitTypeDiv{
+	width: 150px !important;
+}
+#finAtag{
+	display:none;
+	cursor: hand;
+	float:left;
+}
+#iconStyle{
+	width:88px;
+}
+#SalesTurnOverDiv{
+		width: 150px !important;
+}
+
+.greenmenu {
+	color: #669900 !important;
+	font-size: 11px !important;
+	text-decoration: none;
+	font-size: 11px !important;
+	font-family: Tahoma, Arial;
+}
+
+.greenmenuBold {
+	color: #669900 !important;
+	font-size: 11px !important;
+	text-decoration: none;
+	font-size: 11px !important;
+	font-family: Tahoma, Arial;
+	font-weight: bold;
+}
+
+li a.greenmenuBold,li a:active.greenmenuBold,li a:visited.greenmenuBold
+	{
+	color: #669900 !important;
+	text-decoration: none;
+	font-size: 11px !important;
+	font-weight: bold;
+	font-family: Tahoma, Arial;
+	font-weight: bold;
+}
+
+li a.greenmenu,li a:active.greenmenu,li a:visited.greenmenu {
+	color: #669900 !important;
+	text-decoration: none;
+	font-size: 11px !important;
+	font-family: Tahoma, Arial;
+}
+#CreditPolicyDiv{
+		width: 150px !important;
+}
+#CrossBorderPolicyDiv{
+		width: 150px !important;
+}
+#clntGrpRelDiv{
+		width: 150px !important;
+}
+#BankRelDiv{
+		width: 150px !important;
+}
+#ScbTiClntBankDiv{
+		width: 150px !important;
+}
+#limitsCoveredDiv{
+	width: 150px !important;
+}
+#linkScoreCard{
+	width: 60px !important;
+}
+#leLimitsCoveredDiv{
+	width: 150px !important;
+}
+#ccbrLimitApprovedDiv{
+	width: 150px !important;
+}
+#csaIdDiv{
+	width: 120px !important;
+}
+#column_limits_coveredDiv{
+	width: 150px !important;
+}
+#PddSelDiv{
+	width: 150px !important;
+}
+#FacBookLocDiv{
+	width: 150px !important;
+}
+#islamicFacilityDiv3{
+	width: 150px !important;
+}
+#bilSynLoanDiv{
+	width: 150px !important;
+}
+#islamicFacilityStructureDiv3{
+	width: 150px !important;
+}
+#LGDJustificationSelDiv{
+	width: 150px !important;
+}
+#fmrCategoryDiv{
+	width: 150px !important;
+}
+#clientDetailsForm_clientDetailsBean_scoreCardIdDiv{
+width: 150px !important;
+}
+#nextRevDateDiv{
+		width: 160px !important;
+}
+/* #clientULGD{
+width: 10px !important;
+} */
+#clientULGDBt{
+width: 270px !important;
+}
+#mbgWWRdto{
+	width: 162px !important;
+}
+#EntiCovDiv{
+	width: 200px !important;
+}
+#ssLink{
+	width: 150px !important;
+}
+#ssDeLink{
+width: 150px !important;	
+}
+#tier1CapitalDiv{
+width: 150px !important;
+}
+#compCtryALDiv{
+width: 100px !important;
+}
+#eafUpdate{
+width: 55px !important;
+}
+#wwrSaveButton{
+	width: 60px !important;
+}
+#ClntSaveButton{
+	width: 60px !important;
+}
+#riskSaveBtn{
+	width: 60px !important;
+}
+#refreshRskEsratCategroy{
+	width: 155px !important;
+}
+#bcaAttSvBtn{
+	width: 40px !important;
+}
+#wwrSvBtn{
+	width: 38px !important;
+}
+	#rmSelectButton{
+	width: 38px !important;
+}
+	#gamSelectButton{
+	width: 38px !important;
+	}
+#linkDelinkCreditMateSc{
+	width: 10px !important;
+}
