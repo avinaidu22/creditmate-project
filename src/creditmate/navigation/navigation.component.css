@@ -1887,3 +1887,206 @@ width: 55px !important;
 .filetree span.folder { background: url(images/folder.gif) 0 0 no-repeat; }
 .filetree li.expandable span.folder { background: url(images/folder-closed.gif) 0 0 no-repeat; }
 .filetree span.file { background: url(images/file.gif) 0 0 no-repeat; }
+/* Start: Added by Aleph: 2012-02-13 */
+
+input {
+	background:url('../../images/input-bg.png') repeat-x !important;
+	height:23px !important;
+	padding:4px 5px 0px 5px;
+}
+
+input[disabled] {
+	color:#ccc !important;
+}
+
+input[readonly] {
+	color:#ccc !important;
+}
+
+body {
+	color:#666 !important;
+	background:#f2f2f2 !important;
+	margin:0px;
+	padding:0px;
+}
+
+a, a:active, a:visited {
+color:#0088CC !important;
+}
+
+li a.leftmenuBold,
+li a:active.leftmenuBold,
+li a:visited.leftmenuBold,
+li a.leftmenu,
+li a:active.leftmenu,
+li a:visited.leftmenu {
+color:#666 !important;
+}
+
+table {
+	border-collapse:"collapse";
+	empty-cells:show;
+}
+
+li span.file, li span.folder {
+	background:transparent !important;
+	padding:0px 3px 0px 0px !important;
+	margin-top:-2px !important;
+}
+
+.borderDark {
+	background:transparent !important;
+	border:1px solid #ccc;
+}
+
+.bgTbRowBl {
+	background:#e2e2e2 !important;
+	border:1px solid #ccc !important;
+}
+
+.borderDark .bgTbRowBl{
+	border:0px none !important;
+}
+
+.borderLight {
+	background:transparent !important;
+	border:1px solid #ccc;
+}
+
+.bgTbRowWh {
+	background:transparent !important;
+}
+
+.menublue, .menublue:hover {
+	color:#333;
+	border:0px none !important;
+}
+
+.bgTbMainHdr {
+	background:url('../../images/widget_top_bg.png') repeat-x 0px bottom !important;
+	width:100%;
+	padding-left:10px;
+	padding-right:10px;
+	color:#333;
+}
+
+/*.menublue {
+	background:url('../../images/widget_top_bg.png') repeat-x 0px bottom !important;
+}*/
+
+.bgTbMainHdrGradient {
+	background:url('../../images/widget_top_bg_bigger.png') repeat-x 0px bottom !important;
+}
+
+.leftmenu, .leftmenuBold { 
+	color:#666 !important;
+	font-size:11px !important;
+}
+
+.treeview ul {
+	background:transparent !important;
+}
+
+input.buttonText {
+	background:url('../../images/widget_top_bg.png') repeat-x 0px -1px !important;
+	border:1px solid #ccc;
+	color:#666;
+	height:30px !important;
+	line-height:23px !important;
+	padding:0px !important;
+}
+
+.bgTbMainHdrGradient {
+	color:#666 !important;
+}
+
+.buttonText {
+	color:#666 !important;
+}
+
+table.borderLight {
+	border-collapse:'collapse';
+}
+
+table.borderLight td, th {
+	border:1px solid #f2f2f2;
+}
+
+tr.no-border td {
+	border:0px none !important;
+}
+
+td.normal input {
+	background:transparent !important;
+	height:15px !important;
+	width:15px;
+}
+
+.searchCustomerScroller {
+	background:transparent !important;
+}
+
+.errorMessage {
+	color:#cc3333 !important;
+}
+
+M.sun, B.sun {
+	background-color:#ccc !important;
+	color:#333;
+	font-weight:bold;
+}
+M.mon, B.mon {
+	background-color:#666 !important;
+	color:#fff !important;
+	font-weight:bold !important;
+	
+}
+
+C.DA, A.DA {
+	color:#666 !important;
+	text-decoration:underline !important;
+}
+
+.MO {
+	color:#666 !important;
+	text-decoration:underline !important;
+}
+
+
+A.Clear {
+	margin-top:35px !important;
+	display: block;
+	color:#666 !important;
+	text-decoration:underline !important;
+	
+}
+
+
+.aleph-warning{
+	color:#cc3333 !important;
+}
+
+
+
+.mandatory{
+	color:#cc3333 !important;
+	text-decoration: none;
+}
+
+.mandatoryTxt{
+	color:#cc3333 !important;
+	text-decoration: none;
+}
+
+
+table.borderLight .menublue td {
+	border:0px none !important;
+}
+
+td.buttoncss input {
+	background:transparent !important;
+	height:0px !important;
+	width:15px;
+}
+
+/* End: Added by Aleph: 2012-02-13 */
