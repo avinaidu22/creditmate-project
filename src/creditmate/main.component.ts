@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+//asas
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
