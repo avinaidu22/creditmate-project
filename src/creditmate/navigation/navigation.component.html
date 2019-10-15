@@ -6,27 +6,32 @@
 	<TABLE height="82%">
 		<TBODY>
 			<TR>
-				<TD style="BORDER-RIGHT: #e2e2e2 1px solid" vAlign="top" width="14%">
+				<TD style="BORDER-RIGHT: #e2e2e2 1px solid" vAlign="top" width="12%">
 
 					<FORM id="lockESRATForPropose" method="post">
 						<UL id="browser" class="filetree treeview" jQuery1571117139018="2">
 							<LI class="w3-bar-item w3-button tablink" (click)="selectTab('clntDet')"><SPAN class="file"><A id="0" class="leftmenu" href="#" name="link">Client Details </A></SPAN>
 							<LI class="w3-bar-item w3-button tablink"><SPAN class=folder><A id=100 class="leftmenu" href="#" name="link">Checklists</A> 
 <UL>
-<LI class="w3-bar-item w3-button tablink"><SPAN class="file"><A id="1" class="leftmenu" href="#" name="link">Risk Assessment</A> </SPAN>
+<LI class="w3-bar-item w3-button tablink" (click)="selectTab('rskAsses')"><SPAN class="file"><A id="1" class="leftmenu" href="#" name="link">Risk Assessment</A> </SPAN>
 							</LI>
 						</UL></SPAN>
 						<DIV id="client_details_children_div_id"></DIV>
-						<LI class="w3-bar-item w3-button tablink"><SPAN class="file"><A id="3" class="leftmenu" href="#" name="link">Final Summary </A></SPAN>
-						<LI class="w3-bar-item w3-button tablink"><SPAN class="file"><A  id="4" class="leftmenu" href="#" name="link">Attachments </A></SPAN>
-						<LI class="w3-bar-item w3-button tablink"><SPAN class="file"><A id="5" class="leftmenu" href="#" name="link">Propose / Approve </A></SPAN>
-						<LI class="w3-bar-item w3-button tablink">
+						<LI class="w3-bar-item w3-button tablink" (click)="selectTab('finSumm')"><SPAN class="file"><A id="3" class="leftmenu" href="#" name="link">Final Summary </A></SPAN>
+						<LI class="w3-bar-item w3-button tablink" (click)="selectTab('attach')"><SPAN class="file"><A id="4" class="leftmenu" href="#" name="link">Attachments </A></SPAN>
+						<LI class="w3-bar-item w3-button tablink" (click)="selectTab('propApp')"><SPAN class="file"><A id="5" class="leftmenu" href="#" name="link">Propose / Approve </A></SPAN>
+						<LI class="w3-bar-item w3-button tablink" (click)="selectTab('genPdf')">
 							<SPAN class="file"><A id="6" class="leftmenu" style="CURSOR: hand" name="link">Generate PDF</A> </SPAN>
 						</LI>
 						</UL>
 					</FORM>
 				</TD>
                 <TD vAlign="top"><app-clientdetails *ngIf='selectedTab === "clntDet"'></app-clientdetails></TD>
+                <TD vAlign="top"><app-riskassesment *ngIf='selectedTab === "rskAsses"'></app-riskassesment></TD>
+                <TD vAlign="top"><app-finalsummary *ngIf='selectedTab === "finSumm"'></app-finalsummary></TD>
+                <TD vAlign="top"><app-attachments *ngIf='selectedTab === "attach"'></app-attachments></TD>
+                <TD vAlign="top"><app-proposeapprove *ngIf='selectedTab === "propApp"'></app-proposeapprove></TD>
+                <TD vAlign="top"><app-genpdf *ngIf='selectedTab === "genPdf"'></app-genpdf></TD>
 			</TR>
 		</TBODY>
 	</TABLE>

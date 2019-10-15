@@ -8,6 +8,10 @@ import { ToolsComponent } from './tools/tools.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ClientdetailsComponent } from './tabs/clientdetails/clientdetails.component';
 import { FinalsummaryComponent } from './tabs/finalsummary/finalsummary.component';
+import { RiskassesmentComponent } from './tabs/riskassesment/riskassesment.component';
+import { AttachmentsComponent } from './tabs/attachments/attachments.component';
+import { ProposeapproveComponent } from './tabs/proposeapprove/proposeapprove.component';
+import { GenpdfComponent } from './tabs/genpdf/genpdf.component';
 
 
 
@@ -21,7 +25,11 @@ import { FinalsummaryComponent } from './tabs/finalsummary/finalsummary.componen
   ToolsComponent,
   NavigationComponent,
   ClientdetailsComponent,
-  FinalsummaryComponent],
+  FinalsummaryComponent,
+  RiskassesmentComponent,
+  AttachmentsComponent,
+  ProposeapproveComponent,
+  GenpdfComponent],
   bootstrap: [MainComponent],
 })
 export class AppModule { }
