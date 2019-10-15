@@ -6,6 +6,8 @@ import {FormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { ToolsComponent } from './tools/tools.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ClientdetailsComponent } from './tabs/clientdetails/clientdetails.component';
+import { FinalsummaryComponent } from './tabs/finalsummary/finalsummary.component';
 
 
 
@@ -17,7 +19,9 @@ import { NavigationComponent } from './navigation/navigation.component';
   MainComponent,
   HeaderComponent,
   ToolsComponent,
-  NavigationComponent],
+  NavigationComponent,
+  ClientdetailsComponent,
+  FinalsummaryComponent],
   bootstrap: [MainComponent],
 })
 export class AppModule { }
