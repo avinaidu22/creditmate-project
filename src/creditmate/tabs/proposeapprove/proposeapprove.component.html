@@ -1,3 +1,652 @@
-<p>
-proposeapprove works!
-</p>
+
+
+
+
+<html>
+<head>
+<link href="/CreditRethinkCREUAT/css/style.css" rel="stylesheet" type="text/css">
+<link href="/CreditRethinkCREUAT/css/aleph-css.css" rel="stylesheet" type="text/css">
+
+<title>Set Approvals</title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="0">
+</head>
+<script type="text/javascript" src="/CreditRethinkCREUAT/js/esratApproval.js"></script> 
+<script type="text/javascript" src="/CreditRethinkCREUAT/js/ear_commonValidations.js"></script>
+<SCRIPT type="text/javascript">
+	 function fnEnableField()
+	 {
+
+	 	
+	 	if (document.getElementById("esratApprovalBean.selectedAction").value == 'APPROVED')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'PROPOSED')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'SUPPORTED')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'CO-APPROVED')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'FORWARDED')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'VOID')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'REFER BACK')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == 'DECLINED')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = false;
+	 	}
+	 	else if(document.getElementById("esratApprovalBean.selectedAction").value == '-1')
+	 	{
+	 		document.getElementById("esratApprovalBean.signatoryComments").disabled = true;
+	 		//document.getElementById("esratApprovalBean.userId").disabled = true;
+	 		//document.getElementById("esratApprovalBean.userId").value = "";
+
+	 		alert('Please select Action');
+	 	}else{
+
+	 		alert('Please select Action');
+
+	 	}
+	 	if(document.getElementById("esratApprovalBean.selectedAction").value=='PROPOSED' || 
+		 	document.getElementById("esratApprovalBean.selectedAction").value=='SUPPORTED' ||
+		 	document.getElementById("esratApprovalBean.selectedAction").value=='FORWARDED' ||
+		 	document.getElementById("esratApprovalBean.selectedAction").value=='CO-APPROVED'
+	 	){
+	 	
+	 	
+	 	var docType = 'ESRA';
+		var	 segmentCode = 'A'
+	 
+           
+	 		// added by naveen for user list.
+	 		//var child = window.open("/CreditRethinkCREUAT/user/showGMAppUserSelScreen.action","","scrollbars=1,menubar=0,toolbar=0,resizable=1,top=20,left=100,width=650,height=350");
+			var child = window.open('./../user/showGMAppUserSelScreen.action?docType='+docType+'&segmentCode='+segmentCode,"",'scrollbars=1,menubar=0,toolbar=0,resizable=1,top=20,left=100,width=650,height=300');
+
+
+	 	}
+	 	
+	 }
+	 
+	function disable(){
+		if (event.button == 2)
+		{
+			alert("Sorry, Right click has been disabled for security reasons.");
+		}
+	}
+	
+	
+	function taLimit(taObj,maxSize) { 	
+		if (taObj.value.length==maxSize) 
+		{
+			//alert("You reached maximum limit");
+			var taValue = taObj.value.trim();
+			taObj.value = taValue;
+			taObj.focus();
+			return false;
+		}else if (taObj.value.length >= maxSize){
+			var taValue = taObj.value.trim();
+			taValue = taValue.substring(0,maxSize);
+			taObj.value = taValue;
+			taObj.focus();
+			return false;
+		}
+		return true;
+	}
+	
+	String.prototype.trim = function() { return this.replace(/^\s+|\s+$/, ''); };
+
+
+
+
+	function disableElement(id) {
+
+	 	if (document.getElementById(id) != null) {
+
+			document.getElementById(id).disabled = true;
+
+	 	}
+
+	}
+
+	
+
+	function enableElement(id) {
+
+		if (document.getElementById(id) != null) {
+
+			document.getElementById(id).disabled = false;
+
+		}
+
+	}
+
+
+
+	function submitESRAT(finalized){
+	    //alert('finalized = '+finalized);
+	    var submitAction = document.getElementById("esratApprovalBean.selectedAction");
+	    if(submitAction){
+
+	    	var actionValue = submitAction.value;
+	    	//alert(' actionValue = '+actionValue);
+	    	if(actionValue == 'PROPOSED' && finalized == 'false'){
+	    		alert('Please finalize the ESRA before Proposing');
+	    		return false;
+	    	}
+	    }
+	    
+	    var finalCategory = 'Near Compliant with SCB policies';
+	    var custCategory = '';
+		var segmentSubClassification = '';
+		var rolledOut = 'TRUE';
+		var rollOutFlagCB = 'TRUE';
+	    //added by Tyda for ESRAT
+	    
+	    var displayPopUp = 'Yes';
+	   	if (document.getElementById("esratApprovalBean.selectedAction").value == 'APPROVED'){
+		   	
+			if(displayPopUp=="Yes"){
+				var	 segmentCode = 'A'	
+				
+				if(((rolledOut == 'true' || rolledOut =='TRUE') && custCategory == 'CC') || (segmentCode == 'A' && (rollOutFlagCB== 'true' || rollOutFlagCB=='TRUE')))
+				{
+					//CROP-47628 Changes Start
+					var esraStandaloneRollOut = 'true';
+			        if(esraStandaloneRollOut == 'TRUE'){
+						if(finalCategory == 'Near Compliant with SCB policies')
+						{
+							confirmMsg="Reminder - a 'near-compliant' ESRA may be referred to ESRM if there are issues of concern which warrant further investigation.";
+						}
+						else if (finalCategory == 'Non Compliant with SCB policies')
+						{
+							confirmMsg="Reminder - a 'non-compliant' ESRA must be referred to ESRM before seeking approval. Please attach evidence of ESRM's support.";
+						}
+					}
+					else{
+						if(finalCategory == 'Near Compliant with SCB policies')
+						{
+							confirmMsg="A Near-Compliant ESRA must be escalated to the Credit Approver to consider whether referral to ESRM is warranted. Please ensure this escalation, and referral to ESRM if required, takes place prior to submitting the BCA.";
+						}
+						else if (finalCategory == 'Non Compliant with SCB policies')
+						{
+							confirmMsg="A Non-Compliant ESRA must be referred to ESRM for their review prior to submitting the BCA. Please attach ESRM's response to the ESRA. Kindly note that escalation to the Group Reputational Risk Committee (GRRC) may be required per the ESRM procedure.";
+						}
+					}
+					//CROP-47628 Changes End
+					
+					
+				}
+				else if(segmentCode =='30'){
+			//confirmMsg= "Due to the 'Environmental and Social Risk Assessment' rating, you may need to escalate your ESRA for SME PGC's review/approval";
+			//confirmMsg= "Due to the 'Environment and Social Risk Assessment' rating, you may need to escalate your ESRA for SME PGC's review/approval. Please email sme.sustainability@sc.com for further assistance.";
+                          confirmMsg= "Due to the non-compliant rating, you must refer this Exclusion List to ESRM (via CBPvBBC.ESRM@sc.com) for support, prior to seeking credit approval.";
+			
+			}else{
+			//CROP-47628 Changes Start
+			var esraStandaloneRollOut = 'true';
+			if(esraStandaloneRollOut == 'TRUE'){
+				confirmMsg= "Reminder - a 'non-compliant' ESRA must be referred to ESRM before seeking approval.";
+			}
+			else{
+				confirmMsg= "Due to the 'Environmental and Social Risk Assessment' rating, you may need to escalate your ESRA for WB RRRC's approval";
+			}
+			//CROP-47628 Changes End
+				}
+			
+			if(!confirm(confirmMsg))
+	 		 return false;
+			}
+			
+			var smeDoc = ''
+			if(rollOutFlagCB== 'false' || rollOutFlagCB=='FALSE'){
+			if(((rolledOut == 'true' || rolledOut =='TRUE') && custCategory == 'CC')){
+				 var custInExclsionSec = 'No';
+				 if(custInExclsionSec =="Yes"){
+				 confirmMsg = "This Exclusion List relates to an excluded sector. Please note the exception referral process (as outlined in the Commercial E&S Procedure) must be satisfied.";
+				 if(!confirm(confirmMsg))
+			 		 return false;
+				 }
+			}
+			}
+			if(smeDoc=="Yes" || smeDoc=="Y"){
+			  var custInExclsionSec = 'No';
+			  
+			if(custInExclsionSec=="Yes"){
+				
+				if(rolledOut == 'true' || rolledOut =='TRUE'){
+					confirmMsg = "This Exclusion List relates to an excluded sector. Please note the exception referral process (as outlined in the Commercial E&S Procedure) must be satisfied."
+				}
+				else {
+				confirmMsg="Please note that the transaction you are reviewing is in an excluded sector. Please refer to the ESRA user guide as you may need to escalate this transaction";
+				}
+			
+			if(!confirm(confirmMsg))
+	 		 return false;
+			}
+			
+			}
+			
+		}
+	    //var user = document.getElementById("esratApprovalBean.userID");
+
+	    //alert('user = '+user.value);
+		parent.restartTimeChecker();
+
+		document.ssApprovalForm.method="POST";
+
+		document.ssApprovalForm.action="/CreditRethinkCREUAT"+"/ESRAT/esratProposeApprove.action";
+
+		disableElement("submitAppr");
+
+		disableElement("unFinalizeBtn");
+
+		document.ssApprovalForm.submit();
+
+	}
+
+
+
+	function finalizeSS(){
+	
+	var finalCategory = 'Near Compliant with SCB policies';
+	//added by Tyda for ESRAT
+	
+	  var displayPopUp = 'Yes';
+	  var segmentCode = 'A';
+		var custCategory = '';
+		var segmentSubClassification = '';
+		var rolledOut = 'TRUE';
+		var rollOutFlagCB = 'TRUE';
+		
+		if(displayPopUp=="Yes"){
+		
+			//Veni Added Rollout Flag fro CB version 4.0 for A segment
+			if(((rolledOut == 'true' || rolledOut =='TRUE') && custCategory == 'CC') || (segmentCode == 'A' && (rollOutFlagCB== 'true' || rollOutFlagCB=='TRUE')))
+		{
+			//CROP-47628 Changes Start
+			var esraStandaloneRollOut = 'true';
+			if(esraStandaloneRollOut == 'TRUE'){
+				if(finalCategory == 'Near Compliant with SCB policies')
+				{
+					alert("Reminder - a 'near-compliant' ESRA may be referred to ESRM if there are issues of concern which warrant further investigation.");
+				}
+				else if (finalCategory == 'Non Compliant with SCB policies')
+				{
+					alert("Reminder - a 'non-compliant' ESRA must be referred to ESRM before seeking approval. Please attach evidence of ESRM's support.");
+				}
+			}
+			else{
+				if(finalCategory == 'Near Compliant with SCB policies')
+				{
+					alert("A Near-Compliant ESRA must be escalated to the Credit Approver to consider whether referral to ESRM is warranted. Please ensure this escalation, and referral to ESRM if required, takes place prior to submitting the BCA.");
+				}
+				else if (finalCategory == 'Non Compliant with SCB policies')
+				{
+					alert("A Non-Compliant ESRA must be referred to ESRM for their review prior to submitting the BCA. Please attach ESRM's response to the ESRA. Kindly note that escalation to the Group Reputational Risk Committee (GRRC) may be required per the ESRM procedure.");
+				}
+			}
+			//CROP-47628 Changes End
+			
+			
+		}
+		else if(segmentCode =='30'){
+                                  alert("Due to the non-compliant rating, you must refer this Exclusion List to ESRM (via CBPvBBC.ESRM@sc.com) for support, prior to seeking credit approval.");  
+				//alert("Due to the 'Environment and Social Risk Assessment' rating, you may need to escalate your ESRA for SME PGC's review/approval. Please email sme.sustainability@sc.com for further assistance.");
+				//alert("Please be reminded that due to the rating 'Non Compliant with SCB policies', you may require SME PGC's approval");
+			}else{
+				//CROP-47628 Changes Start
+				var esraStandaloneRollOut = 'true';
+			   if(esraStandaloneRollOut == 'TRUE'){
+					alert("Reminder - a 'non-compliant' ESRA must be referred to ESRM before seeking approval.");
+				}
+				else{
+					alert("Please be reminded that due to the rating 'Non Compliant with SCB policies', you may require WB RRRC's approval");
+				}
+				//CROP-47628 Changes End
+			}
+		}
+		
+		  var smeDoc = ''
+		  if(rollOutFlagCB== 'false' || rollOutFlagCB=='FALSE'){
+		  if(((rolledOut == 'true' || rolledOut =='TRUE') && custCategory == 'CC'))
+		  {
+			  var custInExclsionSec = 'No';
+			  if(custInExclsionSec=="Yes"){	
+				  alert("This Exclusion List relates to an excluded sector. Guidance must be sought from ESRM (ESRM.Commercial&Retail@sc.com) if you still wish to proceed. All Non-Compliant Exclusion Lists submitted to ESRM must be accompanied by a completed ESRA.");
+			  }
+			  }
+		  }
+		if(smeDoc=="Yes" || smeDoc=="Y"){
+		  var custInExclsionSec = 'No';
+		  
+				if(custInExclsionSec=="Yes"){	
+			
+			//var  confirmMsg="Your transaction is in an excluded sector. Please note that Standard Chartered does not finance such activity?";
+			
+			 // if(!confirm(confirmMsg))
+	 		 //   return false;  
+	 		    if(rolledOut == 'true' || rolledOut =='TRUE'){
+		 		    alert("This Exclusion List relates to an excluded sector. Guidance must be sought from ESRM (ESRM.Commercial&Retail@sc.com) if you still wish to proceed. All Non-Compliant Exclusion Lists submitted to ESRM must be accompanied by a completed ESRA.");
+	 		    }
+	 		    else {
+	 		    alert("Your transaction is in an excluded sector. Please note that Standard Chartered does not finance such activity");
+	 		    }
+			}
+				
+			}
+		
+		parent.restartTimeChecker();
+
+		document.ssApprovalForm.method="POST";
+
+		document.ssApprovalForm.action="/CreditRethinkCREUAT"+"/ESRAT/finalizeESRAT.action";
+
+		disableElement("finalizeBtn");
+
+		document.ssApprovalForm.submit();
+
+	}
+
+
+
+	function unFinalizeSS(){
+
+		parent.restartTimeChecker();
+
+		document.ssApprovalForm.method="POST";
+
+		document.ssApprovalForm.action="/CreditRethinkCREUAT"+"/ESRAT/unFinalizeESRAT.action";
+
+		disableElement("unFinalizeBtn");
+
+		disableElement("submitAppr");
+
+		document.ssApprovalForm.submit();
+
+	}
+	function emailToEsrat(){
+		parent.restartTimeChecker();
+		document.ssApprovalForm.method="POST";
+		document.ssApprovalForm.action="/CreditRethinkCREUAT"+"/ESRAT/emailToEsrat.action";
+		document.ssApprovalForm.submit();
+	}
+
+
+
+
+
+function setTextArea(){
+
+
+                 var taObj1 = document.getElementById("otherReason");	
+					if(taObj1!=null) {
+						taCount(taObj1,'myCounter',300);
+				    }
+				  
+				  var taObj2 = document.getElementById("commentText");	
+					if(taObj2!=null) {
+						taCount(taObj1,'myCounter1',300);
+				    }
+					
+}
+
+function setUserId(userId, userName, searchType){
+		if(document.getElementById("esratApprovalBean.userId")!=null){
+		document.getElementById("esratApprovalBean.userId").value = userId;
+		} else {
+		document.getElementById("ssApprovalForm_esratApprovalBean_userId").value = userId;
+		}
+		document.getElementById("username").innerHTML = userName;
+		//document.getElementById("gmAction.usrgroupFlag").value = searchType;
+	
+}
+
+function taCount(r,t,y){
+}
+function hideDiv(d){}
+
+	</SCRIPT>
+<body onmousedown="disable()" onload="setTextArea();hideDiv('reasonDiv');hideDiv('commentDiv');">
+		
+<form id="ssApprovalForm" name="ssApprovalForm" onsubmit="return checkReason();parent.restartTimeChecker();; return true;" action="/CreditRethinkCREUAT/ESRAT/showEsratProposeApprove.action" method="post">
+
+	 
+	  
+	
+	<span class="errorMessageRed">
+		
+		
+	</span>
+	
+	<input type="hidden" name="struts.token.name" value="struts.token" />
+<input type="hidden" name="struts.token" value="7QGEH9Q8JR2Q7G7A1D07CG7S18B91OSW" />
+
+	<span class="successMessage"></span>
+	
+
+	<table width="100%" align="center" border="0" cellspacing="1"
+		cellpadding="0">
+		
+		<tr  align="center" class="bgTbRowWh">
+			<td>
+				<span class="mandatoryTxt">
+				Please save the content of this page before moving on to any other screen, otherwise the contents will be lost.
+				</span>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="center" class="normal">
+			<table id="table2" width="99%" border="0">
+				<tr>
+					<td class="menublue">&rsaquo;<strong>Approval Details</strong></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+
+		
+
+		
+
+			<tr>
+			<td>
+			<table width="98%" cellspacing=0 cellpadding=4 class="bgTbRowWh">
+				<tr>
+					<td align="left" class="bgTbRowWh">
+					<table cellspacing=1 width="100%" border=0>
+						<tr>
+							<td class="borderLight">
+							<TABLE id=table2 cellSpacing=0 cellPadding=4 width="100%"
+								border=0>
+
+								<TR class=bgTbRowBl id=row_219287>
+									<TD width="15%" align="left"><strong>Action</strong></TD>
+									<TD width="2%" align="left">:</TD>
+									<TD width="22%" align="left"><select name="esratApprovalBean.selectedAction" id="esratApprovalBean.selectedAction" class="field" onchange="javascript:divVisibility()">
+    <option value="-1"
+    selected="selected"
+    >-- Please Select --</option>
+    <option value="PROPOSED">PROPOSED</option>
+    <option value="VOID">VOID</option>
+
+
+</select>
+</TD>
+									<TD width="2%" align="left">:</TD>
+									<TD width="15%" align="left"><strong>User Id</strong></TD>
+									<TD width="2%" align="left">:</TD>
+									<TD width="42%" align="left">
+										<table cellpadding=0 cellspacing="0" class="menublue" align="left" style="cursor:hand" >
+										<tr>
+											<td width="30%" >
+												<input type="text" name="esratApprovalBean.userId" maxlength="8" value="" readonly="readonly" id="ssApprovalForm_esratApprovalBean_userId" class="field"/>
+
+												<input type="hidden" name="esratApprovalBean.userNameId" value="" id="bankID"/>
+
+											</td>
+											<td width="5%" >&nbsp;</td>
+											<td width="65%" >
+
+												
+												 <input type="button" value="Search User" onclick="javascript:fnEnableField();" class="buttonText"/>
+									    		<!-- 
+									    		<a id="ssApprovalForm_" href="#" onclick="javascript:fnEnableField();">
+												<table cellpadding=0 cellspacing="0" class="menublue" align="left"
+													style="cursor:hand" title="Search">
+													<tr>
+														<td width="10"><img
+															src="/CreditRethinkCREUAT/image/button_left_part.gif"
+															width="10" height="23" border="0" alt="Search"></td>
+														<td align="left"
+															background="/CreditRethinkCREUAT/image/button_middle_part.gif"><span
+															class="buttonText">Search User</span></td>
+														<td width="10"><img
+															src="/CreditRethinkCREUAT/image/button_right_part.gif"
+															width="10" height="23" border="0" alt="Search"></td>
+													</tr>
+												</table>
+												</a>
+												 -->
+												
+											</td>
+										</tr>
+										</table>
+								
+								</TR>
+									<TR class="bgTbRowBl" id="row_219287">
+										<TD width="15%" align="left">&nbsp;</TD>
+									<TD width="2%" align="left">&nbsp;</TD>
+									<TD width="22%" align="left">&nbsp;</TD>
+									<TD width="2%" align="left">&nbsp;</TD>
+									<TD width="15%" align="left">&nbsp;</TD>
+									<TD width="2%" align="left">&nbsp;</TD>
+									<TD width="42%" align="left" cssClass="field" id="username"></TD>
+									</TR>
+							</TABLE>
+							</td>
+						</tr>
+					</table>
+					</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		
+
+		<tr>
+			<td>
+							<TABLE id=table2 cellSpacing=0 cellPadding=4 width="98%"
+								border=0>
+															
+								
+								
+							<input type="hidden" name="esratApprovalBean.signatoryComments" value="" id="esratApprovalBean.signatoryComments"/>
+
+							<TR>
+								<td>
+								<div id="reasonDiv" >
+								<table width="100%" border=0>
+								<tr class=bgTbRowBl>		
+								
+								<TD align="left"><strong>Reasons&nbsp;: </strong></TD>
+									<td align="left" colspan="6">
+									<textarea name="otherReason" cols="88" rows="8" wrap="virtual" id="otherReason" class="fieldTextArea" onkeypress="return taLimit(this,300)" onkeyup="return taCount(this,'myCounter',300)"></textarea>
+								      
+									
+								      <br>
+							        <font font-family="Tahoma, Arial" font-size="11px">You have <B><SPAN id="myCounter">300</SPAN></B> characters remaining ...</font>													
+									</td>	  
+								 </tr>
+								</table>
+								</div>
+								</td>							   
+							</TR> 								
+								<TR>
+								<td>
+								<div id="commentDiv">
+								<table width="100%">
+								<tr class=bgTbRowBl>								
+								<TD align="left"><strong>Comments&nbsp;: </strong></TD>								  
+								   <TD align="left" colspan="6"><textarea name="esratApprovalBean.comments" cols="88" rows="8" wrap="virtual" id="commentText" class="fieldTextArea" onkeypress="return taLimit(this,300)" onkeyup="return taCount(this,'myCounter1',300)"></textarea>
+								      
+								       <br>
+							        <font font-family="Tahoma, Arial" font-size="11px">You have <B><SPAN id="myCounter1">300</SPAN></B> characters remaining ...</font>													
+								 </TD> </tr>
+								</table>
+								</div>
+								</td>		     
+								</TR> 								 
+								
+		
+						<TR><br></TR>
+
+
+						
+
+						<tr>
+
+							
+
+							<td align="center">
+							<!-- Added this button by  viswa for email notification -->
+
+						       
+
+								
+
+				
+
+								
+
+									<input type="button" id="unFinalizeBtn" value="Edit Document" class="buttonText" onclick="unFinalizeSS();" />
+
+								
+
+				
+							
+								
+
+									<input type="button" id="submitAppr" value="Submit" class="buttonText" onclick="return submitESRAT('true');" />
+
+								
+
+							</td>
+
+						</tr>
+
+						
+
+
+
+					</TABLE>
+				<br>	
+			<!--	<table class="borderLight" width="97%">
+						<body>
+							<tr>								
+								<th align="center" class="bgTbMainHdrGradient" height="36" width="40%">
+									Signatory History
+								</th>																	
+								<th align="center" class="bgTbMainHdrGradient" height="36" width="60%">
+									Signatory Comments
+								</th>								
+							</tr>
+							
+						</body>
+				</table>-->

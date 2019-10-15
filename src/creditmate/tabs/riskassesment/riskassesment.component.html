@@ -1,3 +1,1536 @@
-<p>
-riskassesment works!
-</p>
+
+
+<html>
+ <head>
+  <TITLE>Standard Chartered Bank -- Client Details</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Expires" CONTENT="0">
+
+<link href="/CreditRethinkCREUAT/css/style.css" rel="stylesheet" type="text/css">
+<link href="/CreditRethinkCREUAT/css/aleph-css.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="/CreditRethinkCREUAT/js/esrat_commonValidations.js"></script>
+<script type="text/javascript" src="/CreditRethinkCREUAT/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href='/CreditRethinkCREUAT/css/dhtmlxtree.css'>
+<link href="/CreditRethinkCREUAT/css/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+</style>
+<style>
+#para pre { background:white;
+position:relative;
+font-size:12px;width:100%;
+font-family:Tahoma }
+
+#inr p { background:white;
+position:relative;
+font-size:12px;width:100%; font-family:Tahoma 
+}
+</style>
+
+</head>
+<script>
+var templateName = "null";
+templateName = templateName.replace('&', '&amp;');
+if (templateName) {
+try{
+	document.getElementById("templateDivId").innerHTML = '&rsaquo;&nbsp;' + templateName;
+	}catch(e){}
+}
+if (templateName=='Exclusion List') {
+document.getElementById("inr").innerHTML = '';
+}
+
+function fnOpenWindow(){	
+	var linkUrl="https://www.sc.com/en/sustainability/performance-and-policies/standards-and-policies.html";
+	var win= window.open(linkUrl,"Show_Guidelines");
+}
+function setCountValue_myCounter(txId, ctrId){
+	var taObj = document.getElementById(txId);	
+	if(taObj!=null) {
+		taCount(taObj,ctrId,500);
+	}
+}
+function taCount(a,s,d){}
+function populateOrigArray(a,s){}
+ 
+function save() {	
+	var urlTemplateName = escape("null");
+	document.esratTemplateDetailsForm.action = "saveTemplateAnswersV3.action?templateName="+urlTemplateName;
+	document.esratTemplateDetailsForm.submit();
+}
+
+/*
+ * CB Version 4.0 Starts Here
+ */
+function expandCollapse(imgObj, templateId) {
+	 var	minusURL='/CreditRethinkCREUAT/image/minus.gif';
+	 var	plusURL='/CreditRethinkCREUAT/image/plus.gif';
+	 	if (document.getElementById(templateId + "_PANEL").style.display == 'none') {
+	 		document.getElementById(templateId + "_PANEL").style.display = 'block';
+	 		imgObj.src = "/CreditRethinkCREUAT/image/minus.gif";
+	 	} else {
+	 		document.getElementById(templateId + "_PANEL").style.display = 'none';
+	 		imgObj.src = "/CreditRethinkCREUAT/image/plus.gif";
+	 	}
+	 } 
+function myTrim(str) {
+    return str.replace(/^\s+|\s+$/gm,'');
+}
+function validateRemarks(){
+	var allRemarksIdList=document.getElementsByName("allRemarksId");
+	var count=0;
+	for(var i=0;i<allRemarksIdList.length;i++){
+		var id=allRemarksIdList[i].getAttribute('id');
+		var remarksVal=document.getElementById('ta'+id).value;
+		var remarksVal = myTrim(remarksVal);
+		if((id=='Q2052' && document.getElementById('A8159').checked==true)||(id=='Q2053' && document.getElementById('A8162').checked==true)||(id=='Q2054' && document.getElementById('A8166').checked==true)||(id=='Q2055' && document.getElementById('A8170').checked==true)||(id=='Q2056' && document.getElementById('A8174').checked==true)||
+				(id=='Q2057' && document.getElementById('A8179').checked==true)||(id=='Q2058' && document.getElementById('A8182').checked==true)||(id=='Q2059' && document.getElementById('A8187').checked==true)||(id=='Q2060' && document.getElementById('A8190').checked==true) ||
+				(id=='Q2061' && document.getElementById('A8193').checked==true)||(id=='Q2062' && document.getElementById('A8196').checked==true)||(id=='Q2063' && document.getElementById('A8200').checked==true)||(id=='Q2064' && document.getElementById('A8204').checked==true) ||(id=='Q2065' && document.getElementById('A8209').checked==true)
+				||(id=='Q2063' && document.getElementById('A8197').checked==true) ||(id=='Q2063' && document.getElementById('A8199').checked==true) ||(id=='Q2063' && document.getElementById('A8198').checked==true) )
+        {
+			continue;
+		}
+		if(remarksVal=='' || remarksVal.length == 0){
+			count=count+1;
+		}
+	}
+	if (count>=1){
+		//CROP-47628 Changes Start
+		var esraStandaloneRollOut = 'true';
+		if(esraStandaloneRollOut == 'TRUE'){
+			alert("Missing information - please note that in accordance with the ESRM Standard, supporting remarks must be provided for all answers.");
+		}
+		else{
+			alert("Please note supporting answer is required in accordance with the Model Answer ESRA. Question with no supporting remarks may result in the ESRA being returned by the Credit Approver for further comment or supporting information.");
+		}
+		//alert("Please note supporting answer is required in accordance with the Model Answer ESRA. Question with no supporting remarks may result in the ESRA being returned by the Credit Approver for further comment or supporting information.");
+		//CROP-47628 Changes End
+		save();
+	}
+	else {
+		save();
+	}
+
+}
+function popupDisplayV4() {
+	var displayStatus=document.getElementById('popupDisplayV4').value;
+	var crEsraRollout=document.getElementById('crEsraRollout').value;
+			if(displayStatus=="Yes"){
+				var	 segmentCode = 'A';
+				var custCategory = '';
+				var segmentSubClassification = '';
+				var rolledOut = 'TRUE';
+			if((rolledOut == 'true' || rolledOut =='TRUE') && (custCategory == 'CC' || segmentCode == 'A'))
+			{
+			var finalSummary = 'Near Compliant with SCB policies';
+			//CROP-47628 Changes Start
+			var esraStandaloneRollOut = 'true';
+			if(esraStandaloneRollOut == 'TRUE'){
+				if(finalSummary == 'Near Compliant with SCB policies')
+				{
+						alert("Reminder - a 'near-compliant' ESRA may be referred to ESRM if there are issues of concern which warrant further investigation.");
+				}
+				else if (finalSummary == 'Non Compliant with SCB policies')
+				{
+						alert("Reminder - a 'non-compliant' ESRA must be referred to ESRM before seeking approval. Please attach evidence of ESRM's support.");
+				}
+			}
+			else{
+				if(finalSummary == 'Near Compliant with SCB policies')
+				{
+						alert("A Near-Compliant ESRA must be escalated to the Credit Approver to consider whether referral to ESRM is warranted. Please ensure this escalation, and referral to ESRM if required, takes place prior to submitting the BCA.");
+				}
+				else if (finalSummary == 'Non Compliant with SCB policies')
+				{
+						alert("A Non-Compliant ESRA must be referred to ESRM for their review prior to submitting the BCA. Please attach ESRM's response to the ESRA. Kindly note that escalation to the Group Reputational Risk Committee (GRRC) may be required per the ESRM procedure.");
+				}	
+			}
+			//CROP-47628 Changes End
+		}
+	} 
+}
+
+/*
+ * CB Version 4.0 Ends Here
+ */
+function displayGuideline(sectionId, questionId) {	
+	url = "./showGuidelinesV2.action?sectionId="+sectionId+"&questionId="+questionId;
+	var win = window.open(url,"Show_Guidelines","scrollbars=1,menubar=0,toolbar=0,resizable=1,top=20,left=100,width=500,height=300");
+}
+
+function popGenInfo(information) {
+	url = "./downloadGenInfo.action?information="+information;
+	var win = window.open(url,"Select_Answer","scrollbars=1,menubar=0,toolbar=0,resizable=1,top=20,left=100,width=500,height=370");
+}
+
+function hideDiv() {
+	
+		document.getElementById('para').style.display = 'none'; 
+		document.getElementById('para').style.visibility = 'hidden';
+	}
+	
+	function showDiv(id) {
+
+		document.getElementById('para').style.display = 'inline'; 
+		document.getElementById('para').style.visibility = 'visible';
+		
+	}
+	function setCustInExcludSec(){
+	try{
+		var smeDoc = '';
+		var nonCompliantMsg =  "";
+		var custCategory = '';
+		var segmentSubClassification = '';
+		var rolledOut = 'TRUE';	
+		var rollOutFlagCB = 'TRUE';
+		if(((rolledOut == 'true' || rolledOut =='TRUE') && custCategory == 'CC') || (segmentCode == 'A' && (rollOutFlagCB== 'true' || rollOutFlagCB=='TRUE'))){
+			if(nonCompliantMsg == 'Yes'){
+	            	alert("A 'Yes' response to an Exclusion List question demonstrates mis-alignment with the Position Statements, therefore credit facilities must not be provided unless the exception referral process (as outlined in the Commercial E&S Procedure) is satisfied");
+			}
+		}
+		}catch(e){}
+	}
+
+	function setRadioButton(id, sectionId, questionId) {
+		selectedDisplayCode = id;
+		selectedDisplay = document.getElementById('hid'+id).value;
+		if (selectedDisplayCode && selectedDisplayCode != '') {		
+			var taId = sectionId+''+questionId;
+			document.getElementById('code'+taId).value = selectedDisplayCode;
+			document.getElementById('codeAns'+taId).value = selectedDisplay;
+		}
+	}
+	
+</script>
+
+<body onmousedown="disable();" onload="if(document.getElementById('crEsraRollout').value) popupDisplayV4();parent.window.populateOrigArray('', 'saveTemplateAnswersV3.action');setCustInExcludSec();">										
+			
+<form id="esratTemplateDetailsForm" name="esratTemplateDetailsForm" onsubmit="return true;" action="/CreditRethinkCREUAT/ESRAT/riskAssessmentCB.action" method="POST" enctype="multipart/form-data">
+
+ 
+ <input type="hidden" name="popupDisplayV4" value="No" id="popupDisplayV4"/>
+
+
+<!-- Veni Added Rollout  condition for CB Version 4.0 -->
+
+<span class="successMessage">
+	<ul>
+<!-- CROP-47628 Changes Start -->
+	 
+	 	<li>Please note that all ESRAs must be completed in alignment with the  <a href="https://thebridge.zone1.scb.net/docs/DOC-316651" target="_blank">ESRM Standard</a>. An ESRA that is not aligned with the ESRM Standard may be returned by the approver for amendment or additional supporting information.</li>
+	 
+	 
+	
+      <!-- 	<li>Please note all ESRAs must be completed in alignment with the <a href="https://thebridge.zone1.scb.net/docs/DOC-316651" target="_blank">Model Answer ESRA</a>, and this will be validated by the Credit Approver. ESRAs that are not aligned may be returned by the Credit Approver for further comment or supporting information</li> -->	
+  <!-- CROP-47628 Changes End -->
+	</ul>
+</span>
+
+<span class="successMessage">
+	
+</span>
+
+<span class="errorMessageRed">
+	
+	
+</span>
+<!-- Used to disable Multiple Submits -->
+<input type="hidden" name="struts.token.name" value="struts.token" />
+<input type="hidden" name="struts.token" value="19SPT9DXCBNK7R7JUO9Q6EPCN3CRASIB" />
+
+	
+<table id="tbll" border="0" width="98%" align="center" cellspacing="1" cellpadding="1" class="bgTbRowWh">
+<input type="hidden" name="esratFinalSummary.crEsraRollout" value="" id="crEsraRollout"/>
+
+
+<!-- Veni Added Rollout condition for CB Version 4.0 -->
+
+  
+	<tr>
+		<td colspan="4" align="center" class="bgTbRowWh">			
+			<table cellspacing=1 width="98%" border=0 align="center">
+				
+				
+				
+				
+					
+						<!-- Veni Dynamic List -->
+						<TR>
+						<TD><h3> Risk Assessment</h3></TD>
+						</TR>
+					<tr>					
+						<td class="borderLight">
+								<table id=table2 cellSpacing=3 cellPadding=7 width="100%"
+									border=0 class="bgTbRowBl">
+									    
+									<table border="0" cellspacing="0" style="cursor: pointer">
+						<tr class="bgTbRowWh">
+							<td align="left" onclick=""><img src="/CreditRethinkCREUAT/image/plus.gif" 
+								onclick="expandCollapse(this, 'T77')"/>
+								&rsaquo;&nbsp;&nbsp; <STRONG>Generic</STRONG></td>
+						</tr>
+					</table>
+
+								<table>						
+										<tr>
+											<td class="borderLight" style="border:none;width:1600px">
+											<div id="T77_PANEL" style="display: none">
+												<table id=table2 cellSpacing=3 cellPadding=7 width="100%"
+													border=0 class="bgTbRowBl">
+									 
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2000" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2000');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>1.<b>&nbsp;Legality</b>Are there legal claims or actions relating specifically to the client's Environmental & Social  (E&S) performance?</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8000', 'S800', 'Q2000');"  	
+																			name="1.<b>&nbsp;Legality</b></br>Are there legal claims or actions relating specifically to the client's Environmental & Social  (E&S) performance?" 
+																			value="A8000" id="A8000"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. No, the client has no active legal claims related to its E&amp;S performance, and has not been fined in the past three years." id="hidA8000"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8000"/>
+		
+																			a. No, the client has no active legal claims related to its E&amp;S performance, and has not been fined in the past three years.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8001', 'S800', 'Q2000');"  	
+																			name="1.<b>&nbsp;Legality</b></br>Are there legal claims or actions relating specifically to the client's Environmental & Social  (E&S) performance?" 
+																			value="A8001" id="A8001"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, client has active or historical legal claims related to its E&amp;S performance or has been fined in the past three years, but has addressed these to the satisfaction of the party that raised them, and prevented reoccurrence." id="hidA8001"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8001"/>
+		
+																			b. Yes, client has active or historical legal claims related to its E&amp;S performance or has been fined in the past three years, but has addressed these to the satisfaction of the party that raised them, and prevented reoccurrence.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8002', 'S800', 'Q2000');"  	
+																			name="1.<b>&nbsp;Legality</b></br>Are there legal claims or actions relating specifically to the client's Environmental & Social  (E&S) performance?" 
+																			value="A8002" id="A8002"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. Yes, the client has active legal claims or fines related to its E&amp;S performance, but has not addressed these to the satisfaction of the party that raised them." id="hidA8002"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8002"/>
+		
+																			c. Yes, the client has active legal claims or fines related to its E&amp;S performance, but has not addressed these to the satisfaction of the party that raised them.
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8000";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][0].questionList[0].selectedAnswer" value="a. No, the client has no active legal claims related to its E&amp;S performance, and has not been fined in the past three years." id="codeAnsS800Q2000"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][0].questionList[0].selectedAnswerCode" value="A8000" id="codeS800Q2000"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][0].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2000" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2000',500);">As confirmed by the client, there are no legal claims related to its E&amp;S performance, and has NOT been fined in the past three years.</textarea>
+
+															
+															<font class="bgTbRowBl">Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2000">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2000', 'ctrQ2000');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2001" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2001');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>2.<b>&nbsp;Negative Media Reports or Grievances</b>Are there local stakeholder grievances, negative media or non-governmental organisation (NGO) campaigns over E&S issues?</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8003', 'S800', 'Q2001');"  	
+																			name="2.<b>&nbsp;Negative Media Reports or Grievances</b></br>Are there local stakeholder grievances, negative media or non-governmental organisation (NGO) campaigns over E&S issues?" 
+																			value="A8003" id="A8003"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. No, the client has not been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years." id="hidA8003"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8003"/>
+		
+																			a. No, the client has not been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8004', 'S800', 'Q2001');"  	
+																			name="2.<b>&nbsp;Negative Media Reports or Grievances</b></br>Are there local stakeholder grievances, negative media or non-governmental organisation (NGO) campaigns over E&S issues?" 
+																			value="A8004" id="A8004"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, the client has been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years, but has effectively responded and addressed these so they are no longer an issue." id="hidA8004"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8004"/>
+		
+																			b. Yes, the client has been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years, but has effectively responded and addressed these so they are no longer an issue.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8005', 'S800', 'Q2001');"  	
+																			name="2.<b>&nbsp;Negative Media Reports or Grievances</b></br>Are there local stakeholder grievances, negative media or non-governmental organisation (NGO) campaigns over E&S issues?" 
+																			value="A8005" id="A8005"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. Yes, the client has been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years, and is experiencing ongoing issues. " id="hidA8005"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8005"/>
+		
+																			c. Yes, the client has been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years, and is experiencing ongoing issues. 
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8003";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][1].questionList[0].selectedAnswer" value="a. No, the client has not been the subject of local stakeholder grievances, negative media or NGO campaigns over E&amp;S issues in the past three years." id="codeAnsS800Q2001"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][1].questionList[0].selectedAnswerCode" value="A8003" id="codeS800Q2001"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][1].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2001" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2001',500);">As confirmed by the client, their operations have never been affected by local stakeholder grievances, negative media or non-governmental organisation (NGO) campaigns over E&amp;S issues in the past three years.</textarea>
+
+															
+															<font class="bgTbRowBl">Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2001">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2001', 'ctrQ2001');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2002" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2002');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>3.<b>&nbsp;Environmental & Social Management System (ESMS)</b>Has the client developed a structured and documented ESMS to address relevant sector risks, including: (i) an E&S policy, (ii) identification of its risks, impacts and legal requirements, (iii) objectives and targets, (iv) programs to meet the objectives and targets, including ensuring employees are trained and allocated specific roles / responsibilities, and (v) ongoing monitoring of implementation?</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8006', 'S800', 'Q2002');"  	
+																			name="3.<b>&nbsp;Environmental & Social Management System (ESMS)</b></br>Has the client developed a structured and documented ESMS to address relevant sector risks, including: (i) an E&S policy, (ii) identification of its risks, impacts and legal requirements, (iii) objectives and targets, (iv) programs to meet the objectives and targets, including ensuring employees are trained and allocated specific roles / responsibilities, and (v) ongoing monitoring of implementation?" 
+																			value="A8006" id="A8006"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes, the client has and it covers all these requirements (Note the ESMS may be certified to ISO 14001)." id="hidA8006"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8006"/>
+		
+																			a. Yes, the client has and it covers all these requirements (Note the ESMS may be certified to ISO 14001).
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8007', 'S800', 'Q2002');"  	
+																			name="3.<b>&nbsp;Environmental & Social Management System (ESMS)</b></br>Has the client developed a structured and documented ESMS to address relevant sector risks, including: (i) an E&S policy, (ii) identification of its risks, impacts and legal requirements, (iii) objectives and targets, (iv) programs to meet the objectives and targets, including ensuring employees are trained and allocated specific roles / responsibilities, and (v) ongoing monitoring of implementation?" 
+																			value="A8007" id="A8007"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, the client has an ESMS comprising some policies and procedures for key aspects and risks." id="hidA8007"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8007"/>
+		
+																			b. Yes, the client has an ESMS comprising some policies and procedures for key aspects and risks.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8008', 'S800', 'Q2002');"  	
+																			name="3.<b>&nbsp;Environmental & Social Management System (ESMS)</b></br>Has the client developed a structured and documented ESMS to address relevant sector risks, including: (i) an E&S policy, (ii) identification of its risks, impacts and legal requirements, (iii) objectives and targets, (iv) programs to meet the objectives and targets, including ensuring employees are trained and allocated specific roles / responsibilities, and (v) ongoing monitoring of implementation?" 
+																			value="A8008" id="A8008"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. No, an ESMS has not been developed or implemented." id="hidA8008"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8008"/>
+		
+																			c. No, an ESMS has not been developed or implemented.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8009', 'S800', 'Q2002');"  	
+																			name="3.<b>&nbsp;Environmental & Social Management System (ESMS)</b></br>Has the client developed a structured and documented ESMS to address relevant sector risks, including: (i) an E&S policy, (ii) identification of its risks, impacts and legal requirements, (iii) objectives and targets, (iv) programs to meet the objectives and targets, including ensuring employees are trained and allocated specific roles / responsibilities, and (v) ongoing monitoring of implementation?" 
+																			value="A8009" id="A8009"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="d. An ESMS is not applicable to the client (please justify why in the comments section)." id="hidA8009"/>
+
+																			<input type="hidden" name="" value="4" id="scoreA8009"/>
+		
+																			d. An ESMS is not applicable to the client (please justify why in the comments section).
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8009";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][2].questionList[0].selectedAnswer" value="d. An ESMS is not applicable to the client (please justify why in the comments section)." id="codeAnsS800Q2002"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][2].questionList[0].selectedAnswerCode" value="A8009" id="codeS800Q2002"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][2].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2002" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2002',500);">Considering the profile and size of SCF entities, ESMS would not be applicable. As the goods are sourced from Anchors, sourcing of goods from ethical and sustainable source is established.</textarea>
+
+															
+															<font class="bgTbRowBl">Justify why not applicable in comments section	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2002">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2002', 'ctrQ2002');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2003" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2003');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>4.<b>&nbsp;Community Impacts & Relations</b>Does the client have a formal process specifically for managing community impacts and community relations, including dealing with grievances? This may include impacts on cultural heritage, indigenous peoples, resettlement of people to make way for the client's activities, or impacts on the health or welfare of surrounding communities.</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8010', 'S800', 'Q2003');"  	
+																			name="4.<b>&nbsp;Community Impacts & Relations</b></br> Does the client have a formal process specifically for managing community impacts and community relations, including dealing with grievances? This may include impacts on cultural heritage, indigenous peoples, resettlement of people to make way for the client's activities, or impacts on the health or welfare of surrounding communities." 
+																			value="A8010" id="A8010"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes, the client has comprehensive formal processes with respect to community impacts / relations." id="hidA8010"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8010"/>
+		
+																			a. Yes, the client has comprehensive formal processes with respect to community impacts / relations.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8011', 'S800', 'Q2003');"  	
+																			name="4.<b>&nbsp;Community Impacts & Relations</b></br> Does the client have a formal process specifically for managing community impacts and community relations, including dealing with grievances? This may include impacts on cultural heritage, indigenous peoples, resettlement of people to make way for the client's activities, or impacts on the health or welfare of surrounding communities." 
+																			value="A8011" id="A8011"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, the client has some policies and procedures for key risks with respect to community impacts / relations." id="hidA8011"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8011"/>
+		
+																			b. Yes, the client has some policies and procedures for key risks with respect to community impacts / relations.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8012', 'S800', 'Q2003');"  	
+																			name="4.<b>&nbsp;Community Impacts & Relations</b></br> Does the client have a formal process specifically for managing community impacts and community relations, including dealing with grievances? This may include impacts on cultural heritage, indigenous peoples, resettlement of people to make way for the client's activities, or impacts on the health or welfare of surrounding communities." 
+																			value="A8012" id="A8012"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. No, the client does not have formal processes for managing their community impacts / relations." id="hidA8012"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8012"/>
+		
+																			c. No, the client does not have formal processes for managing their community impacts / relations.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8013', 'S800', 'Q2003');"  	
+																			name="4.<b>&nbsp;Community Impacts & Relations</b></br> Does the client have a formal process specifically for managing community impacts and community relations, including dealing with grievances? This may include impacts on cultural heritage, indigenous peoples, resettlement of people to make way for the client's activities, or impacts on the health or welfare of surrounding communities." 
+																			value="A8013" id="A8013"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="d. Not applicable (the client does not have any community impacts or requirement for community relations - please justify why in the comments section)." id="hidA8013"/>
+
+																			<input type="hidden" name="" value="4" id="scoreA8013"/>
+		
+																			d. Not applicable (the client does not have any community impacts or requirement for community relations - please justify why in the comments section).
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8013";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][3].questionList[0].selectedAnswer" value="d. Not applicable (the client does not have any community impacts or requirement for community relations - please justify why in the comments section)." id="codeAnsS800Q2003"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][3].questionList[0].selectedAnswerCode" value="A8013" id="codeS800Q2003"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][3].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2003" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2003',500);">Considering profile and small size of SCF customers, there will be no community impact of their business operations.</textarea>
+
+															
+															<font class="bgTbRowBl">Justify why not applicable in comments section	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2003">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2003', 'ctrQ2003');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2004" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2004');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>5.<b>&nbsp;Resource Efficiency & Pollution Prevention</b>Can the client demonstrate how they conserve energy and resources as part of their operations? This may include energy consumption, raw materials / commodity inputs, and waste output.</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8014', 'S800', 'Q2004');"  	
+																			name="5.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Can the client demonstrate how they conserve energy and resources as part of their operations? This may include energy consumption, raw materials / commodity inputs, and waste output." 
+																			value="A8014" id="A8014"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes, the client can show improvements in (absolute or relative) energy and resource use over time." id="hidA8014"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8014"/>
+		
+																			a. Yes, the client can show improvements in (absolute or relative) energy and resource use over time.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8015', 'S800', 'Q2004');"  	
+																			name="5.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Can the client demonstrate how they conserve energy and resources as part of their operations? This may include energy consumption, raw materials / commodity inputs, and waste output." 
+																			value="A8015" id="A8015"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. The client is committed to conserving energy and resources, but has no way to demonstrate performance." id="hidA8015"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8015"/>
+		
+																			b. The client is committed to conserving energy and resources, but has no way to demonstrate performance.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8016', 'S800', 'Q2004');"  	
+																			name="5.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Can the client demonstrate how they conserve energy and resources as part of their operations? This may include energy consumption, raw materials / commodity inputs, and waste output." 
+																			value="A8016" id="A8016"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. The client does not, and does not intend to, take any steps to conserve energy and resources." id="hidA8016"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8016"/>
+		
+																			c. The client does not, and does not intend to, take any steps to conserve energy and resources.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8017', 'S800', 'Q2004');"  	
+																			name="5.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Can the client demonstrate how they conserve energy and resources as part of their operations? This may include energy consumption, raw materials / commodity inputs, and waste output." 
+																			value="A8017" id="A8017"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="d. The client does not use energy or resources as part of their operations (please justify why in the comments section)." id="hidA8017"/>
+
+																			<input type="hidden" name="" value="4" id="scoreA8017"/>
+		
+																			d. The client does not use energy or resources as part of their operations (please justify why in the comments section).
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8015";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][4].questionList[0].selectedAnswer" value="b. The client is committed to conserving energy and resources, but has no way to demonstrate performance." id="codeAnsS800Q2004"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][4].questionList[0].selectedAnswerCode" value="A8015" id="codeS800Q2004"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][4].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2004" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2004',500);">Client has confirmed that they are committed and take necessary action to conserve energy and resources as part of their operations. This includes energy, water and raw materials/ commodity inputs, and waste output.</textarea>
+
+															
+															<font class="bgTbRowBl">Near Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2004">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2004', 'ctrQ2004');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2005" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2005');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>6.<b>&nbsp;Resource Efficiency & Pollution Prevention</b> Does the client assess water availability and conservation to avoid water stress in the area of their operations, and avoid/minimise pollution from discharges and effluent?</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8018', 'S800', 'Q2005');"  	
+																			name="6.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Does the client assess water availability and conservation to avoid water stress in the area of their operations, and avoid/minimise pollution from discharges and effluent?" 
+																			value="A8018" id="A8018"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes, the client does, and treats effluent to meet the IFC Performance Standards / World Bank criteria.  " id="hidA8018"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8018"/>
+		
+																			a. Yes, the client does, and treats effluent to meet the IFC Performance Standards / World Bank criteria.  
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8019', 'S800', 'Q2005');"  	
+																			name="6.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Does the client assess water availability and conservation to avoid water stress in the area of their operations, and avoid/minimise pollution from discharges and effluent?" 
+																			value="A8019" id="A8019"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes the client does, and is working towards meeting the IFC Performance Standards / World Bank criteria." id="hidA8019"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8019"/>
+		
+																			b. Yes the client does, and is working towards meeting the IFC Performance Standards / World Bank criteria.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8020', 'S800', 'Q2005');"  	
+																			name="6.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Does the client assess water availability and conservation to avoid water stress in the area of their operations, and avoid/minimise pollution from discharges and effluent?" 
+																			value="A8020" id="A8020"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. No, the client does not. " id="hidA8020"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8020"/>
+		
+																			c. No, the client does not. 
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8021', 'S800', 'Q2005');"  	
+																			name="6.<b>&nbsp;Resource Efficiency & Pollution Prevention</b></br> Does the client assess water availability and conservation to avoid water stress in the area of their operations, and avoid/minimise pollution from discharges and effluent?" 
+																			value="A8021" id="A8021"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="d. The client's operations do not use water, or discharge effluent (please justify in the comments section).  " id="hidA8021"/>
+
+																			<input type="hidden" name="" value="4" id="scoreA8021"/>
+		
+																			d. The client's operations do not use water, or discharge effluent (please justify in the comments section).  
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8019";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][5].questionList[0].selectedAnswer" value="b. Yes the client does, and is working towards meeting the IFC Performance Standards / World Bank criteria." id="codeAnsS800Q2005"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][5].questionList[0].selectedAnswerCode" value="A8019" id="codeS800Q2005"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][5].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2005" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2005',500);">Client has confirmed that they are committed to water conservation to avoid stress in the area of their operations and as well committed to avoid/minimise pollution from discharges and effluents.</textarea>
+
+															
+															<font class="bgTbRowBl">Near Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2005">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2005', 'ctrQ2005');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2006" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2006');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>7.<b>&nbsp;Biodiversity & Heritage Protection</b> Are the client's operations located in, or will they impact upon, protected areas including UNESCO World Heritage Sites, RAMSAR Wetlands, areas of known or potential biodiversity value, including areas with protected species and Key Biodiversity Areas?</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8022', 'S800', 'Q2006');"  	
+																			name="7.<b>&nbsp;Biodiversity & Heritage Protection</b></br> Are the client's operations located in, or will they impact upon, protected areas including UNESCO World Heritage Sites, RAMSAR Wetlands, areas of known or potential biodiversity value, including areas with protected species and Key Biodiversity Areas?" 
+																			value="A8022" id="A8022"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. No, the client's operations are not located in, or do not negatively impact upon these areas.   " id="hidA8022"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8022"/>
+		
+																			a. No, the client's operations are not located in, or do not negatively impact upon these areas.   
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8023', 'S800', 'Q2006');"  	
+																			name="7.<b>&nbsp;Biodiversity & Heritage Protection</b></br> Are the client's operations located in, or will they impact upon, protected areas including UNESCO World Heritage Sites, RAMSAR Wetlands, areas of known or potential biodiversity value, including areas with protected species and Key Biodiversity Areas?" 
+																			value="A8023" id="A8023"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes they will, or it is not known if the client's operations are located in, or will negatively impact these areas.  " id="hidA8023"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8023"/>
+		
+																			b. Yes they will, or it is not known if the client's operations are located in, or will negatively impact these areas.  
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8022";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][6].questionList[0].selectedAnswer" value="a. No, the client's operations are not located in, or do not negatively impact upon these areas.   " id="codeAnsS800Q2006"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][6].questionList[0].selectedAnswerCode" value="A8022" id="codeS800Q2006"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][6].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2006" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2006',500);">Client has confirmed that the client's operations are not located in, or do not negatively impact upon these areas.</textarea>
+
+															
+															<font class="bgTbRowBl">Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2006">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2006', 'ctrQ2006');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2007" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2007');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>8.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b> Has the client developed a structured and documented HSMS to address relevant sector issues, including: (i) hazard identification, (ii) determination of legal and other requirements, (iii) operational planning and control, (iv) emergency preparedness and response, and (v) incident investigation.</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8024', 'S800', 'Q2007');"  	
+																			name="8.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Has the client developed a structured and documented HSMS to address relevant sector issues, including: (i) hazard identification, (ii) determination of legal and other requirements, (iii) operational planning and control, (iv) emergency preparedness and response, and (v) incident investigation." 
+																			value="A8024" id="A8024"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes, the client has and covers all these areas (Note the HSMS may be certified to OHSAS 18001 or ISO 45001)." id="hidA8024"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8024"/>
+		
+																			a. Yes, the client has and covers all these areas (Note the HSMS may be certified to OHSAS 18001 or ISO 45001).
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8025', 'S800', 'Q2007');"  	
+																			name="8.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Has the client developed a structured and documented HSMS to address relevant sector issues, including: (i) hazard identification, (ii) determination of legal and other requirements, (iii) operational planning and control, (iv) emergency preparedness and response, and (v) incident investigation." 
+																			value="A8025" id="A8025"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, the client has an HSMS comprising some policies and procedures for key aspects and risks." id="hidA8025"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8025"/>
+		
+																			b. Yes, the client has an HSMS comprising some policies and procedures for key aspects and risks.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8026', 'S800', 'Q2007');"  	
+																			name="8.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Has the client developed a structured and documented HSMS to address relevant sector issues, including: (i) hazard identification, (ii) determination of legal and other requirements, (iii) operational planning and control, (iv) emergency preparedness and response, and (v) incident investigation." 
+																			value="A8026" id="A8026"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. No, a HSMS has not been developed or implemented." id="hidA8026"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8026"/>
+		
+																			c. No, a HSMS has not been developed or implemented.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8027', 'S800', 'Q2007');"  	
+																			name="8.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Has the client developed a structured and documented HSMS to address relevant sector issues, including: (i) hazard identification, (ii) determination of legal and other requirements, (iii) operational planning and control, (iv) emergency preparedness and response, and (v) incident investigation." 
+																			value="A8027" id="A8027"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="d. A HSMS is not applicable to the client's business operations (please justify why in the comments section)." id="hidA8027"/>
+
+																			<input type="hidden" name="" value="4" id="scoreA8027"/>
+		
+																			d. A HSMS is not applicable to the client's business operations (please justify why in the comments section).
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8025";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][7].questionList[0].selectedAnswer" value="b. Yes, the client has an HSMS comprising some policies and procedures for key aspects and risks." id="codeAnsS800Q2007"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][7].questionList[0].selectedAnswerCode" value="A8025" id="codeS800Q2007"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][7].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2007" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2007',500);">Client has confirmed that client has an HSMS comprising policies and procedures for key aspects and risks.</textarea>
+
+															
+															<font class="bgTbRowBl">Near Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2007">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2007', 'ctrQ2007');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2008" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2008');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>9.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b> Can the client demonstrate they are managing health and safety risks effectively?</strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8028', 'S800', 'Q2008');"  	
+																			name="9.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Can the client demonstrate they are managing health and safety risks effectively?" 
+																			value="A8028" id="A8028"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes, the client is able to disclose incident and injury rates that include third parties and contractors, and are low and/or show consistent decline over the past three years.  " id="hidA8028"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8028"/>
+		
+																			a. Yes, the client is able to disclose incident and injury rates that include third parties and contractors, and are low and/or show consistent decline over the past three years.  
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8029', 'S800', 'Q2008');"  	
+																			name="9.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Can the client demonstrate they are managing health and safety risks effectively?" 
+																			value="A8029" id="A8029"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, the client is able to disclose incident and injury rates that include third parties and contractors, and are stable but for the last three years do not show a decline. " id="hidA8029"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8029"/>
+		
+																			b. Yes, the client is able to disclose incident and injury rates that include third parties and contractors, and are stable but for the last three years do not show a decline. 
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8030', 'S800', 'Q2008');"  	
+																			name="9.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Can the client demonstrate they are managing health and safety risks effectively?" 
+																			value="A8030" id="A8030"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. No, the client is unable to provide incident and injury rates, or they show an increase over the past three years." id="hidA8030"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8030"/>
+		
+																			c. No, the client is unable to provide incident and injury rates, or they show an increase over the past three years.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8031', 'S800', 'Q2008');"  	
+																			name="9.<b>&nbsp;Occupational Health & Safety Management System (HSMS)</b></br> Can the client demonstrate they are managing health and safety risks effectively?" 
+																			value="A8031" id="A8031"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="d. Not applicable (please justify in the comments section)." id="hidA8031"/>
+
+																			<input type="hidden" name="" value="4" id="scoreA8031"/>
+		
+																			d. Not applicable (please justify in the comments section).
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8028";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][8].questionList[0].selectedAnswer" value="a. Yes, the client is able to disclose incident and injury rates that include third parties and contractors, and are low and/or show consistent decline over the past three years.  " id="codeAnsS800Q2008"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][8].questionList[0].selectedAnswerCode" value="A8028" id="codeS800Q2008"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][8].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2008" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2008',500);">Considering the profile and size of SCF entities, there may not be a formal and structured document available with the client but as confirmed, there is a practice to deal with the key aspects of the risk. </textarea>
+
+															
+															<font class="bgTbRowBl">Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2008">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2008', 'ctrQ2008');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								
+									
+																			
+										<tr class=bgTbRowBl>
+											<td width="100%" align="left">
+												<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														
+													
+														<td width="98%"><div id="tooltipQ2009" style="width: 70%"><a style="cursor: hand" onclick="displayGuideline('S800', 'Q2009');">
+															<img width="12" height="12" border="0" src="/CreditRethinkCREUAT/image/star1.gif">
+															</a>&nbsp;<strong>10.<b>&nbsp;Labour Practices & Modern Slavery Risks</b> Does the client have clear policies and procedures regarding labour and working conditions, including for the exclusion of modern slavery, forced and child labour? </strong>
+															</div>
+														</td>
+														
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="98%" align="left" class="bgTbRowBl">
+															<table width="100%" border=0 cellspacing="0" cellpadding="0" align="center">	
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8032', 'S800', 'Q2009');"  	
+																			name="10.<b>&nbsp;Labour Practices & Modern Slavery Risks</b></br> Does the client have clear policies and procedures regarding labour and working conditions, including for the exclusion of modern slavery, forced and child labour? " 
+																			value="A8032" id="A8032"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="a. Yes the client has comprehensive formal processes with respect to labour and working conditions, including for third parties and contractors." id="hidA8032"/>
+
+																			<input type="hidden" name="" value="1" id="scoreA8032"/>
+		
+																			a. Yes the client has comprehensive formal processes with respect to labour and working conditions, including for third parties and contractors.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8033', 'S800', 'Q2009');"  	
+																			name="10.<b>&nbsp;Labour Practices & Modern Slavery Risks</b></br> Does the client have clear policies and procedures regarding labour and working conditions, including for the exclusion of modern slavery, forced and child labour? " 
+																			value="A8033" id="A8033"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="b. Yes, the client has some policies and procedures for key risks with respect to labour and working conditions, but these do not include third parties and contractors." id="hidA8033"/>
+
+																			<input type="hidden" name="" value="2" id="scoreA8033"/>
+		
+																			b. Yes, the client has some policies and procedures for key risks with respect to labour and working conditions, but these do not include third parties and contractors.
+																		</td>
+																	</tr>
+																
+																	<tr class="bgTbRowWh"><td>&nbsp;</td></tr>
+																	<tr class="bgTbRowWh">
+																		<td width="15%" align="center">
+																			<input type="radio" 
+																			onclick="setRadioButton('A8034', 'S800', 'Q2009');"  	
+																			name="10.<b>&nbsp;Labour Practices & Modern Slavery Risks</b></br> Does the client have clear policies and procedures regarding labour and working conditions, including for the exclusion of modern slavery, forced and child labour? " 
+																			value="A8034" id="A8034"/>
+																		</td>
+																		<td width="85%" align="left">
+																			<input type="hidden" name="" value="c. No, the client does not have formal processes for managing risks with respect to labour and working conditions." id="hidA8034"/>
+
+																			<input type="hidden" name="" value="3" id="scoreA8034"/>
+		
+																			c. No, the client does not have formal processes for managing risks with respect to labour and working conditions.
+																		</td>
+																	</tr>
+																
+																<script>
+																var mVal = "A8032";
+																//alert(" mVal:"+mVal);
+																if (mVal != null && mVal != '') {
+																	document.getElementById(mVal).checked=true;
+																}
+																</script>												
+															</table>
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][9].questionList[0].selectedAnswer" value="a. Yes the client has comprehensive formal processes with respect to labour and working conditions, including for third parties and contractors." id="codeAnsS800Q2009"/>
+
+															<input type="hidden" name="holderBean.esratSectionBeanMap['T77'][9].questionList[0].selectedAnswerCode" value="A8032" id="codeS800Q2009"/>
+
+														</td>
+													</tr>
+													<tr class="bgTbRowBl">
+														<td width="2%">&nbsp;</td>
+														<td width="98%">Remarks:</td>
+													</tr>													
+													<tr>	
+														<td width="2%">&nbsp;</td>													
+														<td width="90%" align="left">
+															
+															
+																<textarea name="holderBean.esratSectionBeanMap['T77'][9].questionList[0].remarks" cols="" rows="" wrap="virtual" readonly="readonly" id="taQ2009" class="field" style="width: 70%" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctrQ2009',500);">Considering the profile and size of SCF entities, there may not be a formal and structured document available with the client but as confirmed, there is a practice to deal with the key aspects of the risk. </textarea>
+
+															
+															<font class="bgTbRowBl">Compliant with SCB policies	</font>	
+															<br>
+															<font class="bgTbRowBl">You have <b><span id="ctrQ2009">500</span></b> characters remaining ...</font> 
+															<script>
+																setCountValue_myCounter('taQ2009', 'ctrQ2009');
+															</script>
+														</td>														
+													</tr>													
+												</table>		
+											</td>
+										</tr>
+									
+								 
+								
+								
+								<!-- Veni Added Rollout for CB Version 4.0 -->
+													
+																							
+								<tr class=bgTbRowBl>
+														<td width="100%" align="left">&nbsp;</td>
+											</tr>
+										</table>
+										</div>
+									</td>
+								</tr>								
+							</table>
+							
+							
+							  
+							<tr class=bgTbRowBl>
+									<td width="100%" align="left">
+										<table width="100%" border=0 cellspacing="0" cellpadding="0" align="left">
+											<tr class=bgTbRowBl>
+												<td width="2%">&nbsp;</td>
+												<td width="20%">Individual Category</td>
+												<td width="3%" align="right">:&nbsp;&nbsp;&nbsp;</td>
+												<td width="75%"><input type="text" name="holderBean.indCategory" value="Near Compliant with SCB policies" readonly="readonly" id="esratTemplateDetailsForm_holderBean_indCategory" class="field" style="width: 85%"/>
+</td>
+												<td><input type="hidden" name="esratFinalSummary.crEsraRollout" value="" id="crEsraRollout"/>
+</td>
+											</tr>
+											<tr class=bgTbRowBl><td width="100%" colspan="4">&nbsp;</td></tr>
+											
+												<tr class=bgTbRowBl>
+													<td width="2%">&nbsp;</td>
+													<td width="20%">Summary</td>
+													<td width="3%" align="right">:&nbsp;&nbsp;&nbsp;</td>
+													<td width="75%"><textarea name="holderBean.summary" cols="" rows="4" readonly="readonly" id="esratTemplateDetailsForm_holderBean_summary" class="field" style="width: 85%">Question Rated Near Compliant ::  		Generic (Q5,Q6,Q8)		</textarea>
+</td>
+												</tr>
+											
+										</table>
+									</td>
+								</tr>	
+							</table>
+						</td>
+					</tr>
+				
+				
+				<!-- Veni Added for CB Version 4.0 for Exclusion List -->
+				
+			</table>
+		</td>
+	</tr>
+</table>
+</form>
+
+
+
+
+
+</body>
+</html>

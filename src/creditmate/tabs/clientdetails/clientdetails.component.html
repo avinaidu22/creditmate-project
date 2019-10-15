@@ -1,3 +1,1064 @@
-<p>
-Client Details Loaded
-</p>
+
+
+<html>
+ <head>
+
+
+<link href="/CreditRethinkCREUAT/css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/CreditRethinkCREUAT/js/esrat_commonValidations.js"></script>
+<!-- CB ESRAT V4 changes starts from here -->
+<!-- Added by Veni for ISIC related changes -->
+<script type="text/javascript">
+var templateSetHasChanged = '0';
+var nofalg = '0';
+
+function yesnoCheck(str){
+	var checkvalue = str;
+	var oldOverrideChecklist=null ;
+	disableTemplatesNone(checkvalue);
+	if(document.getElementById('esratOldCheckListType') != null){
+	 oldOverrideChecklist=document.getElementById('esratOldCheckListType').value;
+	}
+	 if (checkvalue == 'Y') {
+		var result_style =  document.getElementById('checklist1').style;
+		var result_style2 =  document.getElementById('justification1').style;
+		document.getElementById('yesCheck').checked = true;
+		result_style.display = 'table-row';
+		result_style2.display = 'table-row';
+		nofalg = '1';
+		} else {
+	    	var result_style =  document.getElementById('checklist1').style;
+			var result_style2 =  document.getElementById('justification1').style;
+			if(document.getElementById('esracheckListType') != null){
+				document.getElementById('esracheckListType').value="";
+			}
+			if(document.getElementById('justification') != null){
+				document.getElementById('justification').value="";
+			}
+			if(document.getElementById('noCheck') != null){
+				document.getElementById('noCheck').checked = true;
+			}
+			result_style.display = 'none';
+			result_style2.display = 'none';
+			if(oldOverrideChecklist !="1" && oldOverrideChecklist!='T00'){
+				document.getElementsByName('esratClientDetailsBean.esratTemplates')[oldOverrideChecklist].checked=false;
+				if(oldOverrideChecklist =="T75" || oldOverrideChecklist =="T83"){
+					var palmOil = '0';
+					palmOilCategory(palmOil);
+				}
+			}
+		}
+   }
+		
+function replaceWordChars(text) {
+    var s = text;
+    // smart single quotes and apostrophe
+    s = s.replace(/[\u2018|\u2019|\u201A]/g, "\'");
+    // smart double quotes
+    s = s.replace(/[\u201C|\u201D|\u201E]/g, "\"");
+       document.getElementById("justification").value = s;
+}
+		
+function checklistChange(name){
+	try{
+	templateSetHasChanged = '1';
+	var palmOil;
+	disableTemplatesNone(name);
+		document.getElementById('esracheckListType').checked=true;
+		var mychecklist = document.getElementById('esracheckListType').value;
+		var oldChecklist = document.getElementById('esratOldCheckListType').value;
+        if(mychecklist!='T00'){
+		document.getElementsByName('esratClientDetailsBean.esratTemplates')[mychecklist].checked=true;}
+		if(oldChecklist !="1" && oldChecklist !='T00'){
+		document.getElementsByName('esratClientDetailsBean.esratTemplates')[oldChecklist].checked=false;
+		}
+		document.getElementById('esratOldCheckListType').value=mychecklist;
+				if(mychecklist == 'T75' || mychecklist == 'T83'){
+				palmOil = "1";
+				palmOilCategory(palmOil);
+				}
+		
+				if(mychecklist != oldChecklist){
+					if(oldChecklist =='T75' || oldChecklist =='T83'){
+						palmOil = "0";
+						palmOilCategory(palmOil);
+					}
+				}
+                                if(mychecklist == oldChecklist){					
+						document.getElementsByName('esratClientDetailsBean.esratTemplates')[mychecklist].checked=true;					
+				}
+	}catch(e){
+	}	
+}
+<!--CB ESRAT Changes END HERE  -->
+function setCountValue_myCounter(txId, ctrId){
+	var taObj = document.getElementById(txId);	
+	if(taObj!=null) {
+		taCount(taObj,ctrId,500);
+	}
+}
+function taCount(a,s,d){}
+</script>
+<!-- End of ISIC related changes -->
+<script type="text/javascript" src="/CreditRethinkCREUAT/js/ss_screenSwap.js"></script>
+<script language="JavaScript"> 
+	var templateSetHasChanged = '0';
+	var templatesCheckedOrig = {};
+	var templatesCheckedOrigCate = {};
+	function disable() {
+		if (event.button == 2)
+		{
+			alert("Sorry, Right click has been disabled for security reasons.");
+		}
+	}
+	
+	function fnLoadRMDetails(){
+	
+		leId = document.getElementById("clientLeId").value;
+		url = "./searchClientRM.action?leId="+leId;
+		var win = window.open(url,"Search_RM","scrollbars=1,menubar=0,toolbar=0,resizable=1,top=20,left=100,width=650,height=295");
+		return false;
+	
+	}
+	
+	function fnLoadRMSearch(){
+		var child = window.open("./searchRM.action","Search_RM","scrollbars=1,menubar=0,toolbar=0,resizable=1,top=20,left=100,width=650,height=295");
+		return false;
+	}
+	
+	function loadmTemplatesCheckedOrig() {
+		var	 version = '4.0';
+		var id='';
+		for (var key in templatesCheckedOrig) {
+			document.getElementById(key).checked=true;
+			if(key == "T75" || key == "T83"){
+				palmOilCategory(1);
+			}
+		}
+		if(version =='4.0'){
+			loadmTemplatesCheckedOrigCate();
+			defaultcheck();
+			if(key == "T75"){
+			id="T75";
+			} else {
+			id="T83";
+			}
+			templateCheck(id);
+		}
+	}
+	function loadmTemplatesCheckedOrigCate() {
+		for (var keys in templatesCheckedOrigCate) {
+			document.getElementById(keys).checked=true;
+		}
+	}
+	
+	function checkTemplate(id) {
+		if (!document.getElementById(id).checked) {
+			if (!confirm("The unselected checklist will be deleted from the ESRA, continue?")) {
+				document.getElementById(id).checked = true;
+			}
+		}
+	}
+	
+	<!-- CB ESRAT V4 changes starts from here -->
+	
+	//Viswa Added  this method for CB Version 4.0
+	function palmOilIsSelected() {		
+		  for(var i=0; i<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; i++ ){
+				var tempId=	document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].value;
+				  if ((tempId =="T75" || tempId =="T83") && document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked){
+					var palmOilIsSelcted = '1';
+					palmOilCategory(palmOilIsSelcted);
+					break;
+				} 
+			} 
+	}
+	//Viswa Added for CB Version 4.0
+	function palmOilCategory(palmOil){
+		var idcheck = palmOil;
+		var result =  document.getElementById('tempCatLabel');
+		var result1 =  document.getElementById('tempCatLabel1');
+		 if (idcheck == '1') {
+				result.style.display = 'table-row';
+				result1.style.display = 'table-row';
+		    } else {
+		    		for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratClientCategory').length; a++ ){
+			    		document.getElementsByName('esratClientDetailsBean.esratClientCategory')[a].checked=false;
+			    	}
+			    	
+			    	result.style.display = 'none';
+					result1.style.display = 'none';
+		    }	
+	}
+	
+	//Viswa Added for CB Version 4.0
+	function templateCheck(id){
+		var	 version = '4.0';
+		if(version == '4.0'){
+		var palmOil;
+		for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; a++ ){
+			if(id == "T75" || id == "T83"){
+			 if ((document.getElementsByName('esratClientDetailsBean.esratTemplates')['T75']!=null && document.getElementsByName('esratClientDetailsBean.esratTemplates')['T75'].checked) || (document.getElementsByName('esratClientDetailsBean.esratTemplates')['T83']!=null && document.getElementsByName('esratClientDetailsBean.esratTemplates')['T83'].checked)){
+				palmOil = '1';
+				palmOilCategory(palmOil);
+				break;
+			}else{
+				var autoselcId=	null;
+					if(document.getElementById('autoSelectedTempId') != null){
+					autoselcId = document.getElementById('autoSelectedTempId').value;
+					}
+					if(autoselcId != "0" && (document.getElementById('noCheck').checked && (autoselcId == "T75" || autoselcId == "T83"))){
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[autoselcId].checked=true;
+					palmOil = '1';
+					palmOilCategory(palmOil);
+					break;
+					}else{
+					palmOil = '0';
+					palmOilCategory(palmOil);
+					break;
+				   }
+			  }
+		 }
+			return true;
+		}
+		}
+	}
+	/**
+	This method is written by viswa for auto select and unselect of auditional templates based on over ride Yes or No
+	**/
+	function checkAutoSelctedTemplate(str){
+		var checkAutoFlag=str;
+		var palmOil = '1';
+		var autoselcId=	document.getElementById('autoSelectedTempId').value;
+		if(checkAutoFlag == 'Y'){
+			document.getElementsByName('esratClientDetailsBean.esratTemplates')[autoselcId].checked=false;
+			if(autoselcId == 'T75' || autoselcId == 'T83'){
+				palmOil = '0';
+				palmOilCategory(palmOil);
+				}
+		}else{
+			document.getElementsByName('esratClientDetailsBean.esratTemplates')[autoselcId].checked=true;
+			if(autoselcId == 'T75' || autoselcId == 'T83'){
+			  palmOil = '1';
+			palmOilCategory(palmOil);
+			}
+		}
+	}
+	function defaultcheck() {
+		
+		var	 segmentCode = 'A';
+		var rollOutFlagCB = 'TRUE';
+		//Veni Added Rollout Flag fro CB version 4.0 
+		if(segmentCode != null && (rollOutFlagCB=='TRUE' && (segmentCode == 'A' || segmentCode == 'ME' || segmentCode == 'HV' || segmentCode == 'MM'))){
+		var str = 'N';
+		yesnoCheck(str);
+		}
+	}
+	<!-- CB ESRAT Changes ends here -->
+	function checkOriginatingLocChange(objId){
+		var esratOriginalLoc = ''; 
+		var esratNewLoc = document.getElementById(objId).value;
+		
+		if (document.getElementById(objId).value == "") {
+			alert("Originating Location/Entity should not be empty");
+			document.getElementById(objId).value = esratOriginalLoc;
+			return false;
+		}
+		
+		confirmMsg = "Change in Originating Location/Entity will reset the category. Proceed?";
+		if (esratOriginalLoc != "") {
+			if(!confirm(confirmMsg)) {
+				document.getElementById(objId).value = esratOriginalLoc;
+				return false;
+			} 
+		} 
+	}
+	
+	function resetForm() {
+		document.esratClientDetailsForm.reset(); 
+		loadmTemplatesCheckedOrig();
+		return false;
+	}
+	function resetForm1() {
+		document.esratClientDetailsForm.reset(); 
+		try{
+				 document.getElementById("T85").checked = true;
+				 	}catch(e){
+		}
+		loadmTemplatesCheckedOrig();
+		return false;
+	}
+	
+	
+	function saveClientDetails() {		
+		//Veni Added for CB Version 4.0
+		try{
+			  document.getElementById("T85").disabled = false;
+			  	}catch(e){
+		}
+
+		var cateSelect = "true";  
+		var justficationFlag="true";
+		var isCheckListType = "true"; 
+		var ret = showTemplateSetChangesWarning();
+ 	    var rollOutFlagCB = 'TRUE';
+		var	 segmentCode = 'A';
+		var	 version = '4.0';
+		//Viswa Added  this condition for CB Version 4.0
+		if((rollOutFlagCB=='TRUE' || rollOutFlagCB == 'true') && version =='4.0' ){
+			var autoselcId=	null;
+			if(document.getElementById('autoSelectedTempId') != null){
+				autoselcId = document.getElementById('autoSelectedTempId').value;
+			}
+			if(autoselcId != "0"){
+				var overRideflag = document.getElementById('yesCheck').checked;
+				var overrideChecklist = document.getElementById('esracheckListType').value;
+				if(overRideflag == true){
+					 if(overrideChecklist== ""){
+						 isCheckListType="false";
+					} 
+				}
+				if(overrideChecklist =='T75' || overrideChecklist =='T83'){
+					if(document.getElementsByName('esratClientDetailsBean.esratTemplates')[overrideChecklist].checked){
+						cateSelect= "true";
+						}else{
+							cateSelect= "false";
+						}
+				}
+				var justfication = document.getElementById('justification').value;
+				if(overRideflag == true){
+					if(justfication.length ==0){
+						justficationFlag="false";
+					}
+				}
+			}
+				for (i = 0; i < document.getElementsByName('esratClientDetailsBean.esratTemplates').length; i++) {
+					var tempId=	document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].value;
+					if((tempId == "T75" || tempId == "T83") && document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked){
+						for (j = 0; j < document.getElementsByName('esratClientDetailsBean.esratClientCategory').length; j++) {
+							if(document.getElementsByName('esratClientDetailsBean.esratClientCategory')[j].checked){
+								cateSelect= "true";
+								break;
+							}else{
+								cateSelect= "false";
+							}
+					}
+				}
+			}
+		if(isCheckListType == "true"){		
+			if(justficationFlag == "true"){
+				if(cateSelect=="true"){
+			     	if (ret) {
+						saveActionUrl = "saveClientDetails.action";
+						nothingIsSelected = 'true';
+						for (i = 0; i < document.getElementsByName('esratClientDetailsBean.esratTemplates').length; i++) {
+						if(document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked) {
+							nothingIsSelected = 'false';
+							break;
+							}
+						}
+						saveActionUrl += "?nothingIsSelected="+nothingIsSelected+"&templateSetHasChanged="+templateSetHasChanged;
+						document.esratClientDetailsForm.action = saveActionUrl;
+						document.esratClientDetailsForm.submit();
+					} else {
+						loadmTemplatesCheckedOrig();
+					}
+				}else{
+					alert("Please select the Palm Oil category ");
+				}
+			}else{
+				alert("Please provide the justification for Override checklist");	
+			}
+		}else{
+			alert("Please select the Checklist Type");		
+			}
+		}else{ //Viswa  added upto here for CB Version 4.0
+		if (ret) {
+			saveActionUrl = "saveClientDetails.action";
+			nothingIsSelected = 'true';
+			for (i = 0; i < document.getElementsByName('esratClientDetailsBean.esratTemplates').length; i++) {
+			
+				var smeDoc = ''
+					if(smeDoc=="Yes" || smeDoc=="Y"){
+					var tempId=	document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].value;
+					var businessLine=	document.getElementById('businessLine').value;
+					//var excludedSec=	document.getElementById('esratClientDetailsBean.custInExcludSec').value;
+					if(tempId == "T26" && businessLine =='Programme Lending' && document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked){
+						document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked=true;
+						nothingIsSelected = 'false';
+						break;
+					}
+					//Commentd by Babu for New SME ESRA changes start
+					//else if(tempId == "T26" && businessLine =='Discretionary Lending' && excludedSec=='Yes' && document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked){
+				    //else if(tempId == "T26" && businessLine =='Discretionary Lending' && document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked){
+						//document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked=true;
+						//nothingIsSelected = 'true';
+						//break;
+					//}
+					//Commentd by Babu for New SME ESRA changes END
+					if(i!=0 && document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked) {
+					   		nothingIsSelected = 'false';
+							break;
+						}
+					}
+					else{
+					
+						 if(document.getElementsByName('esratClientDetailsBean.esratTemplates')[i].checked) {
+							nothingIsSelected = 'false';
+							break;
+							}	
+						}
+			}
+			saveActionUrl += "?nothingIsSelected="+nothingIsSelected+"&templateSetHasChanged="+templateSetHasChanged;
+			document.esratClientDetailsForm.action = saveActionUrl;
+			document.esratClientDetailsForm.submit();
+		} else {
+			loadmTemplatesCheckedOrig();
+		}
+	
+		
+		}
+		
+	}
+	var templateBoxArr = {};
+
+	function populateTemplateBoxArr() {
+
+		for (var b=0; b<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; b++ ) {
+			if (document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].checked) {
+				templateBoxArr[b] = "checked";
+			} else {
+				templateBoxArr[b] = "unchecked";
+			}
+		}
+	 }
+	
+	function showTemplateSetChangesWarning() {
+
+	
+		for (var b=0; b<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; b++ ) {
+		
+			if (document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].checked == false && templateBoxArr[b] == "checked") {
+				templateSetHasChanged = '1';
+				return confirm("The unselected checklist(s) will be deleted from the ESRA, continue?");
+			} else if (document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].checked == true && templateBoxArr[b] == "unchecked") {
+				templateSetHasChanged = '1';
+			}
+		}
+		return true;
+	}
+	
+	function makingreadOnly(id){
+	
+	var smeDoc = ''
+				if(smeDoc=="Yes" || smeDoc=="Y"){		
+																								
+						if(id=="T26"){	
+															
+							return false;
+						}else{
+						return true;
+						}
+												
+				}
+				else {
+				return true;
+				}
+	}
+	
+	
+	function disableBusinessLine(){
+		var smeDoc = ''
+		if(smeDoc=="Yes" || smeDoc=="Y"){	
+			var businessLine=	document.getElementById('businessLine').value;
+			/*if(businessLine == ''){
+				document.getElementById('businessLine').disabled = false;
+			}else{
+				document.getElementById('businessLine').disabled = true;
+			}*/// issue fixed on esrat auto copy 
+			if(businessLine == 'Programme Lending'){
+		    	for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; a++ ) {
+		    		var tmpId = document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].value;
+		    		if(tmpId == "T26"){
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].checked=true;
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].disabled=false;
+		    		}else{
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].checked=false;
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].disabled=true;
+		    		}
+		    		
+				}
+			}else if(businessLine == 'Discretionary Lending'){
+				for (var b=0; b<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; b++ ) {
+					var tmpId = document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].value;
+					if(tmpId == "T26"){
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].checked=true;
+		    		}
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].disabled=false;
+				}
+			}else {
+				for (var c=0; c<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; c++ ) {
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].disabled=false;
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].checked=false;
+				}
+			}
+
+			
+		}
+
+	}
+	function disableTemplates(){
+		var smeDoc = ''
+		if(smeDoc=="Yes" || smeDoc=="Y"){	
+			var businessLine=	document.getElementById('businessLine').value;
+			if(businessLine == 'Programme Lending'){
+		    	for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; a++ ) {
+		    		var tmpId = document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].value;
+		    		if(tmpId == "T26"){
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].checked=true;
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].disabled=false;
+		    		}else{
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].checked=false;
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[a].disabled=true;
+		    		}
+		    		
+				}
+			}else if(businessLine == 'Discretionary Lending'){
+				for (var b=0; b<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; b++ ) {
+					var tmpId = document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].value;
+					if(tmpId == "T26"){
+		    			document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].checked=true;
+		    		}
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[b].disabled=false;
+				}
+			}else {
+				for (var c=0; c<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; c++ ) {
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].disabled=false;
+					document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].checked=false;
+				}
+			}
+	  }
+	}
+	
+//Added by ramakotireddy for CR237:ProjectAnchor on 25/04/2013
+function checkOrgLoc(){
+
+	var orgCountry = document.getElementById('orgCountry').value;
+	
+	if(orgCountry != null){
+	var	 segmentCode = 'A';
+
+	if(segmentCode != null && (segmentCode == '30' || segmentCode == 'ME' || segmentCode == 'HV')){
+		if(orgCountry == '13000081'){
+		/*Added by Mohan for Info Wall changes */
+			alert('Document originating location "SG/SCBL" is only applicable for CIB & Commercial - LC, MM clients.');
+			document.getElementById('orgCountry').value = "";
+			return false;
+		}
+	}else{
+		if(orgCountry == '13010447'){
+			//alert('Document originating location "SG/SCSP" is only applicable for Business, Commercial - ME & HV clients.');
+			//document.getElementById('orgCountry').value = "";
+			//return false;
+		}
+	}
+	}
+}
+//End
+function disableGeneric(templateId){
+	try{
+	  document.getElementById(templateId).checked = true;
+	  document.getElementById(templateId).disabled = true;
+	}catch(e){
+		}
+}
+
+function disableTemplatesNone(name){	
+try{
+	if(document.getElementById('esracheckListType').value=='T00')
+	{  
+        for (var c=0; c<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; c++ ) {
+		document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].disabled=true;
+		document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].checked=false;
+	    }
+	    for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratClientCategory').length; a++ ){
+		document.getElementsByName('esratClientDetailsBean.esratClientCategory')[a].checked=false;
+		document.getElementsByName('esratClientDetailsBean.esratClientCategory')[a].disabled=true;
+	    }
+    var result =  document.getElementById('tempCatLabel');
+	var result1 =  document.getElementById('tempCatLabel1');
+	
+	result.style.display = 'none';
+	result1.style.display = 'none';
+	
+	   if(name=='N')
+	   {   
+	     for (var c=0; c<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; c++ ) {
+		 document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].disabled=false;		
+	     }
+	     for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratClientCategory').length; a++ ){		
+		 document.getElementsByName('esratClientDetailsBean.esratClientCategory')[a].disabled=false;
+	     }
+	   }
+	}
+   else
+	 {	
+		for (var c=0; c<document.getElementsByName('esratClientDetailsBean.esratTemplates').length; c++ ) {
+			document.getElementsByName('esratClientDetailsBean.esratTemplates')[c].disabled=false;			
+		}	
+		for (var a=0; a<document.getElementsByName('esratClientDetailsBean.esratClientCategory').length; a++ ){			
+			document.getElementsByName('esratClientDetailsBean.esratClientCategory')[a].disabled=false;
+		}
+	 }
+  }
+catch(e){}
+	
+}
+function hideCheckListSubMenu(){}
+function populateOrigArray(a,d){}
+</script>
+</head>
+
+<body onmousedown="disable();" onload="disableGeneric('T85');palmOilIsSelected();defaultcheck();parent.window.hideCheckListSubMenu();parent.window.populateOrigArray('', 'saveClientDetails.action');populateTemplateBoxArr();disableBusinessLine();">
+
+									
+		
+<form id="esratClientDetailsForm" name="esratClientDetailsForm" onsubmit="parent.restartTimeChecker();; return true;" action="/CreditRethinkCREUAT/ESRAT/showESRATClientDetails.action" method="post">
+
+	
+	<input type="hidden" name="esratOriginatingLocation" value="" id="esratOriginatingLocation"/>
+
+	<input type="hidden" name="autoSelectedTempId" value="0" id="autoSelectedTempId"/>
+
+	<input type="hidden" name="esratOldCheckListType" value="1" id="esratOldCheckListType"/>
+
+	<input type="hidden" name="esratChanged" value="-1" id="esratChanged"/>
+
+	  
+	   
+	<span class="errorMessageRed">
+		
+		
+	</span>
+	<span class="successMessage">
+		
+	</span>
+	
+	<!-- Used to disable Multiple Submits -->
+	<input type="hidden" name="struts.token.name" value="struts.token" />
+<input type="hidden" name="struts.token" value="1D1S3YA9RN9R8KAV1BPKVGYSACNDNIP2" />
+
+
+<table width="98%" border="0" cellspacing="0" cellpadding="1">
+
+	
+
+	<table id="tbll" border="0" width="100%" align="left" cellspacing="1" cellpadding="1" class="bgTbRowWh">				
+		<tr>
+			<td colspan="4" align="center" class="normal">
+			<table id="table2" width="98%" border="0">
+				<tr>
+					<td class="menublue">&rsaquo;<strong>&nbsp;Client Details</strong></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="4" align="center" class="bgTbRowWh">
+				<table cellspacing=1 width="98%" border=0>
+					<tr>
+						<td class="borderLight">
+							<table id=table2 cellSpacing=0 cellPadding=4 width="100%" border=0>
+								<tr class=bgTbRowBl>
+									<td width="18%" align="left"><strong>Client's Legal Name</strong></td>
+									<td width="4%" align="left">:		</td>
+									<td width="28%" align="left"><input type="text" name="esratClientDetailsBean.clientLegalName" maxlength="100" value="L NAME 12358153" readonly="readonly" id="custName" class="field"/>
+	  
+									</td>
+									
+									<td align="left"><strong>Client's Segment</strong></td>
+									<td align="left">:		</td>
+									<td align="left"><input type="text" name="esratClientDetailsBean.clientSegment" maxlength="35" value="Local Corporate" readonly="readonly" id="esratClientDetailsForm_esratClientDetailsBean_clientSegment" class="field"/>
+
+									</td>
+								</tr>
+								<tr class="bgTbRowWh">							
+									<td align="left"><strong>Client's Domicile Country</strong></td>
+									<td align="left">:		</td>
+									<td align="left"><input type="text" name="esratClientDetailsBean.clientDomicileCountry" maxlength="100" value="INDIA" readonly="readonly" id="esratClientDetailsForm_esratClientDetailsBean_clientDomicileCountry" class="field"/>
+
+									</td>
+									 
+									<td align=left><strong>Client's Sub Segment</strong></td>
+									<td align=left>:		</td>
+									<td align=left><input type="text" name="esratClientDetailsBean.clientSubSegment" maxlength="100" value="Local Corporates" readonly="readonly" id="esratClientDetailsForm_esratClientDetailsBean_clientSubSegment" class="field"/>
+ 
+									</td>									
+								</tr>
+								<tr class=bgTbRowBl>
+									<td align="left"><strong>Client's LE ID </strong></td>
+									<td align="left">:		</td>
+									<td align="left" colspan="4"><input type="text" name="esratClientDetailsBean.clientLeId" maxlength="15" value="13704160" readonly="readonly" id="clientLeId" class="field"/>
+
+									</td>
+								</tr>
+								<tr class="bgTbRowWh">
+									<td width="18%" align="left"><strong>Client's RM Name</strong></td>
+									<td width="4%" align="left">:		</td>
+									
+									
+									
+										<td width="28%" lign="left"><input type="text" name="esratClientDetailsBean.clientRmName" maxlength="40" value="Jain, Abhisek M" readonly="readonly" id="rMName" class="field"/>
+
+										</td>
+									
+									
+									<td width="18%" align="left"><strong>Client's RM Code</strong></td>
+									<td width="4%" align="left">:		</td>
+									<td width="28%" align="left"><input type="text" name="esratClientDetailsBean.clientRmCode" maxlength="10" value="YD4" readonly="readonly" id="rMCode" class="field"/>
+
+									</td>
+								</tr>
+								<tr class="bgTbRowBl">
+									<td width="18%" align="left"><strong>Client's RM Location</strong></td>
+									<td width="4%" align="left">:		</td>
+													    		    
+						    		<td width="28%" colspan="4" align="left"><input type="text" name="esratClientDetailsBean.clientRmLocation" maxlength="100" value="INDIA" readonly="readonly" id="rmLocation" class="field"/>
+
+									</td>						    		  	
+								</tr>
+										
+								
+								
+								
+							
+								
+								
+								
+									<tr class="bgTbRowWh">
+										<td width="18%" align="left"><strong>ISIC Description and Code</strong>&nbsp;<font color="#FF0000"></font></td>
+										<td width="4%" align="left">:		</td>
+														    		    
+							    		<td width="28%" colspan="4" align="left"><input type="text" name="esratClientDetailsBean.clientISICCodeDesc" value="WHOLESALE TRADE IN PLASTIC MATERIALS(6135)" readonly="readonly" id="isiccode" class="fieldBiggerEsra"/>
+
+										</td>						    		  	
+									</tr>
+									<tr class="bgTbRowBl">
+										<td width="18%" align="left"><strong>Industry-Specific Checklist</strong>&nbsp;<font color="#FF0000"></font></td>
+										<td width="4%" align="left">:		</td>
+														    		    
+							    		<td width="28%" colspan="4" align="left"><input type="text" name="esratClientDetailsBean.autoSelectedCheckList" maxlength="100" value="None" readonly="readonly" id="autoSelectedCheckList" class="field"/>
+
+										</td>						    		  	
+									</tr>
+							 		 
+										<!--Start Added by viswa for CB V4 -->
+										 <tr class="bgTbRowBl" style="display: 'none';" id="checklist1">
+											<td width="18%" align="left"><strong>Checklist Type</strong>&nbsp;<font color="#FF0000">*</font></td>
+											<td width="4%" align="left">:		</td>
+													    		    
+						    				<td width="28%" colspan="4" align="left">
+										<select name="esratClientDetailsBean.esraCheckListType" size="1" disabled="disabled" id="esracheckListType" class="field1" style="width:150px" onchange="checklistChange(this);">
+    <option value=""
+    >-- Please Select --</option>
+    <option value="T78">Agribusiness</option>
+    <option value="T79">Fisheries</option>
+    <option value="T80">Oil &amp; Gas</option>
+    <option value="T81">Mining &amp; Metals</option>
+    <option value="T82">Manufacturing</option>
+    <option value="T83">Palm Oil</option>
+    <option value="T84">Forestry</option>
+    <option value="U01">Fossil Fuel Power</option>
+    <option value="U02">Nuclear Power</option>
+    <option value="U03">Renewable Energy (No sector specific questions)</option>
+    <option value="U04">Dams &amp; Hydropower</option>
+    <option value="U05">Infrastructure</option>
+    <option value="U06">Transport</option>
+    <option value="U07">Chemicals</option>
+    <option value="T00">None</option>
+
+
+</select>
+
+											</td>
+		  								</tr>  
+		  								<!--End Added by viswa for CB V4 -->   
+											<tr class=bgTbRowWh style="display: 'none';" id="justification1">
+												<td width="18%" align="left"><strong>Justification for Override</strong>&nbsp;<font color="#FF0000">*</font></td>
+												<td width="4%" align="left">:		</td>
+												<td width="28%" colspan="4"><textarea name="esratClientDetailsBean.justification" cols="20" rows="8" wrap="virtual" disabled="disabled" id="justification" class="fieldTextAreaEsra" onkeypress="return taLimit(this,500);" onkeyup="return taCount(this,'ctr',500);"></textarea>
+ <br>
+												<br>
+															<font class="bgTbRowBl">You have <b><span id="ctr">500</span></b> characters remaining ...</font>
+															<script>
+																setCountValue_myCounter('justification', 'ctr');
+															</script>
+												</td>
+										</tr>
+										<tr id="row_2" class="bgTbRowWh">
+										<td width="18%" valign="top" ><strong>Additional Industry Checklist</strong>&nbsp;</td>
+						<td width="4%" valign="top">:		</td>
+							<td width="28%" colspan="4">
+											<table cellspacing=0 width="100%" border=0>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T80" name="esratClientDetailsBean.esratTemplates"  id="T80"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Oil &amp; Gas
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T81" name="esratClientDetailsBean.esratTemplates"  id="T81"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Mining &amp; Metals
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T78" name="esratClientDetailsBean.esratTemplates"  id="T78"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Agribusiness
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T79" name="esratClientDetailsBean.esratTemplates"  id="T79"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Fisheries
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U01" name="esratClientDetailsBean.esratTemplates"  id="U01"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Fossil Fuel Power
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T84" name="esratClientDetailsBean.esratTemplates"  id="T84"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Forestry
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U02" name="esratClientDetailsBean.esratTemplates"  id="U02"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Nuclear Power
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U03" name="esratClientDetailsBean.esratTemplates"  id="U03"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Renewable Energy (No sector specific questions)
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T83" name="esratClientDetailsBean.esratTemplates"  id="T83"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Palm Oil
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U04" name="esratClientDetailsBean.esratTemplates"  id="U04"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Dams &amp; Hydropower
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U05" name="esratClientDetailsBean.esratTemplates"  id="U05"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Infrastructure
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U06" name="esratClientDetailsBean.esratTemplates"  id="U06"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Transport
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="T82" name="esratClientDetailsBean.esratTemplates"  id="T82"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Manufacturing
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="U07" name="esratClientDetailsBean.esratTemplates"  id="U07"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Chemicals
+													</td>
+												</tr>
+											
+											
+												<script>							
+													var mVar = 'T77';
+													if(document.getElementById(mVar) != null){
+													document.getElementById(mVar).checked=true;
+													templatesCheckedOrig[mVar] = mVar;
+													}
+												</script>
+																	
+										</table>
+									</td>
+								</tr>
+								<tr   class="bgTbRowWh" id="tempCatLabel1" style="display:none;">
+										<td width="18%" valign="top" ><strong>Client's Categorization</strong>&nbsp;</td>
+							</tr>
+								<tr   class="bgTbRowWh" id="tempCatLabel" style="display:none;">
+										<td width="18%" valign="top" ><strong>Palm Oil</strong>&nbsp;</td>
+						<td width="4%" valign="top">:		</td>
+							<td width="28%" colspan="4">
+												<table cellspacing=0 width="100%" border=0>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="S807" name="esratClientDetailsBean.esratClientCategory"  id="S807"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Producer - Growers &amp; Mills
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowWh">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="S808" name="esratClientDetailsBean.esratClientCategory"  id="S808"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Refiner and/or Trader - With direct linkages to units of production (Producer level operations such as growers and mills)
+													</td>
+												</tr>
+											
+												<tr	class="bgTbRowBl">
+													<td width="5%" align="left">
+														
+														
+															<input type="checkbox" disabled="disabled" value="S809" name="esratClientDetailsBean.esratClientCategory"  id="S809"/>
+																									
+													</td>
+													<td width="95%" align="left">
+														Refiner and/or Trader - With NO direct linkages to units of production (Producer level operations such as growers and mills)
+													</td>
+												</tr>
+											
+												
+										</table>
+									</td>
+								</tr>
+								
+								
+								
+								
+								
+								
+							</table>
+						</td>
+					</tr>
+					
+					<tr class="bgTbRowWh" id="row_2"><td colspan="9" align="center">&nbsp;</td></tr>
+					
+										
+					
+					<!-- Veni Added Rollout Flag for CB 4.0 Version -->
+					
+					
+					<tr class="bgTbRowWh" id="row_2"><td colspan="9" align="center">&nbsp;</td></tr>
+					<!-- Veni Added Rollout Flag for CB 4.0 Version -->
+					
+					<tr class="bgTbRowWh" id="row_2"><td colspan="9" align="center">&nbsp;</td></tr>
+					<tr class="bgTbRowWh" id="row_2"><td colspan="9" align="center">&nbsp;</td></tr>
+					
+				</table>
+			</td>
+	</table>
+</table>
+</form>
+
+ </body>
+</html>

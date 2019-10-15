@@ -12,7 +12,6 @@ selectedTab:string;
   ngOnInit() {
   }
   selectTab(tabDetails:string):void{
-    alert("test::::"+tabDetails);
 this.selectedTab=tabDetails;
 
   }
